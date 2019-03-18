@@ -156,15 +156,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F2A95F42240333000E6F74F /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				9F2A95F52240334300E6F74F /* main.swift */,
-				9F3FF26C22401BB70096E7C2 /* AppDelegate.swift */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
 		9F3FF26022401BB70096E7C2 = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +183,8 @@
 		9F3FF26B22401BB70096E7C2 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				9F2A95F42240333000E6F74F /* Main */,
-				9F93560D2240378C0092009A /* Coordinators */,
+				9F93561A22403BF90092009A /* Main */,
+				9F93561922403BE00092009A /* Coordinators */,
 				9F3FF27622401BB90096E7C2 /* Assets.xcassets */,
 				9F3FF27822401BB90096E7C2 /* LaunchScreen.storyboard */,
 				9F3FF27B22401BB90096E7C2 /* Info.plist */,
@@ -206,8 +197,8 @@
 		9F3FF28322401BBA0096E7C2 /* TodoListTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F935616224039760092009A /* Main */,
-				9F935615224039650092009A /* Coordinators */,
+				9F93561B22403C0F0092009A /* Main */,
+				9F93561D22403C240092009A /* Coordinators */,
 				9F3FF28622401BBA0096E7C2 /* Info.plist */,
 				9F3FF29E22401CEC0096E7C2 /* .swiftlint.yml */,
 			);
@@ -224,30 +215,39 @@
 			path = TodoListUITests;
 			sourceTree = "<group>";
 		};
-		9F93560D2240378C0092009A /* Coordinators */ = {
+		9F93561922403BE00092009A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				9F935610224037D20092009A /* Coordinator.swift */,
 				9F935612224037F40092009A /* RootViewCoordinator.swift */,
 				9F93560E224037A90092009A /* AppCoordinator.swift */,
 			);
-			name = Coordinators;
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		9F935615224039650092009A /* Coordinators */ = {
+		9F93561A22403BF90092009A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9F935617224039940092009A /* AppCoordinatorTests.swift */,
+				9F2A95F52240334300E6F74F /* main.swift */,
+				9F3FF26C22401BB70096E7C2 /* AppDelegate.swift */,
 			);
-			name = Coordinators;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		9F935616224039760092009A /* Main */ = {
+		9F93561B22403C0F0092009A /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				9F2A95F7224033FE00E6F74F /* TestAppDelegate.swift */,
 			);
-			name = Main;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9F93561D22403C240092009A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9F935617224039940092009A /* AppCoordinatorTests.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
