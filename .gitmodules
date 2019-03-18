@@ -1,3 +1,6 @@
 [submodule "Frameworks/QLog"]
 	path = Frameworks/QLog
 	url = https://github.com/QuantumApplications/QLog.git
+[submodule "Frameworks/Alamofire"]
+	path = Frameworks/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
