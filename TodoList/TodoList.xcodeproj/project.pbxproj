@@ -52,6 +52,7 @@
 		9F3FF29D22401CD30096E7C2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F3FF29E22401CEC0096E7C2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F3FF29F22401CFB0096E7C2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		9F3FF2A5224023BB0096E7C2 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 				9F3FF26B22401BB70096E7C2 /* TodoList */,
 				9F3FF28322401BBA0096E7C2 /* TodoListTests */,
 				9F3FF28E22401BBA0096E7C2 /* TodoListUITests */,
+				9F3FF2A5224023BB0096E7C2 /* .travis.yml */,
 				9F3FF26A22401BB70096E7C2 /* Products */,
 			);
 			sourceTree = "<group>";
