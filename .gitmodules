@@ -1,0 +1,3 @@
+[submodule "Frameworks/QLog"]
+	path = Frameworks/QLog
+	url = https://github.com/QuantumApplications/QLog.git

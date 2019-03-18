@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2A95EC2240318400E6F74F /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A95E72240313D00E6F74F /* QLog.framework */; };
+		9F2A95ED2240318400E6F74F /* QLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A95E72240313D00E6F74F /* QLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F2A95F22240330100E6F74F /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A95F12240330100E6F74F /* Zip.framework */; };
+		9F2A95F32240330100E6F74F /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A95F12240330100E6F74F /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F2A95F62240334300E6F74F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A95F52240334300E6F74F /* main.swift */; };
+		9F2A95F8224033FE00E6F74F /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2A95F7224033FE00E6F74F /* TestAppDelegate.swift */; };
 		9F3FF26D22401BB70096E7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF26C22401BB70096E7C2 /* AppDelegate.swift */; };
 		9F3FF26F22401BB70096E7C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF26E22401BB70096E7C2 /* ViewController.swift */; };
 		9F3FF27222401BB70096E7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3FF27022401BB70096E7C2 /* Main.storyboard */; };
@@ -15,10 +21,37 @@
 		9F3FF27A22401BB90096E7C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3FF27822401BB90096E7C2 /* LaunchScreen.storyboard */; };
 		9F3FF28522401BBA0096E7C2 /* TodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF28422401BBA0096E7C2 /* TodoListTests.swift */; };
 		9F3FF29022401BBA0096E7C2 /* TodoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF28F22401BBA0096E7C2 /* TodoListUITests.swift */; };
-		9F3FF2A8224028430096E7C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F3FF2A7224028430096E7C2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F2A95E62240313D00E6F74F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FE859FB1EFAA73600560920;
+			remoteInfo = QLog;
+		};
+		9F2A95E82240313D00E6F74F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FE85A041EFAA73700560920;
+			remoteInfo = QLogTests;
+		};
+		9F2A95EA2240313D00E6F74F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9F48D0C32210C76000DB9472;
+			remoteInfo = QLogTestsHostApp;
+		};
+		9F2A95EE2240318400E6F74F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FE859FA1EFAA73600560920;
+			remoteInfo = QLog;
+		};
 		9F3FF28122401BBA0096E7C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F3FF26122401BB70096E7C2 /* Project object */;
@@ -35,7 +68,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9F2A95F02240318400E6F74F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9F2A95F32240330100E6F74F /* Zip.framework in Embed Frameworks */,
+				9F2A95ED2240318400E6F74F /* QLog.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QLog.xcodeproj; path = ../Frameworks/QLog/QLog/QLog.xcodeproj; sourceTree = "<group>"; };
+		9F2A95F12240330100E6F74F /* Zip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2A95F52240334300E6F74F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9F2A95F7224033FE00E6F74F /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		9F3FF26922401BB70096E7C2 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3FF26C22401BB70096E7C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F3FF26E22401BB70096E7C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2A95F22240330100E6F74F /* Zip.framework in Frameworks */,
+				9F2A95EC2240318400E6F74F /* QLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +136,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F2A95DC2240312800E6F74F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F2A95DE2240313C00E6F74F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A95E72240313D00E6F74F /* QLog.framework */,
+				9F2A95E92240313D00E6F74F /* QLogTests.xctest */,
+				9F2A95EB2240313D00E6F74F /* QLogTestsHostApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F2A95F42240333000E6F74F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A95F52240334300E6F74F /* main.swift */,
+				9F3FF26C22401BB70096E7C2 /* AppDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		9F3FF26022401BB70096E7C2 = {
 			isa = PBXGroup;
 			children = (
+				9F2A95F12240330100E6F74F /* Zip.framework */,
 				9F3FF26B22401BB70096E7C2 /* TodoList */,
 				9F3FF28322401BBA0096E7C2 /* TodoListTests */,
 				9F3FF28E22401BBA0096E7C2 /* TodoListUITests */,
+				9F2A95DC2240312800E6F74F /* Frameworks */,
 				9F3FF2A7224028430096E7C2 /* README.md */,
 				9F3FF2A5224023BB0096E7C2 /* .travis.yml */,
 				9F3FF26A22401BB70096E7C2 /* Products */,
@@ -107,7 +190,7 @@
 		9F3FF26B22401BB70096E7C2 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				9F3FF26C22401BB70096E7C2 /* AppDelegate.swift */,
+				9F2A95F42240333000E6F74F /* Main */,
 				9F3FF26E22401BB70096E7C2 /* ViewController.swift */,
 				9F3FF27022401BB70096E7C2 /* Main.storyboard */,
 				9F3FF27622401BB90096E7C2 /* Assets.xcassets */,
@@ -125,6 +208,7 @@
 				9F3FF28422401BBA0096E7C2 /* TodoListTests.swift */,
 				9F3FF28622401BBA0096E7C2 /* Info.plist */,
 				9F3FF29E22401CEC0096E7C2 /* .swiftlint.yml */,
+				9F2A95F7224033FE00E6F74F /* TestAppDelegate.swift */,
 			);
 			path = TodoListTests;
 			sourceTree = "<group>";
@@ -150,10 +234,12 @@
 				9F3FF26622401BB70096E7C2 /* Frameworks */,
 				9F3FF26722401BB70096E7C2 /* Resources */,
 				9F3FF2A022401DC20096E7C2 /* ShellScript */,
+				9F2A95F02240318400E6F74F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9F2A95EF2240318400E6F74F /* PBXTargetDependency */,
 			);
 			name = TodoList;
 			productName = TodoList;
@@ -232,6 +318,12 @@
 			mainGroup = 9F3FF26022401BB70096E7C2;
 			productRefGroup = 9F3FF26A22401BB70096E7C2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9F2A95DE2240313C00E6F74F /* Products */;
+					ProjectRef = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9F3FF26822401BB70096E7C2 /* TodoList */,
@@ -241,6 +333,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		9F2A95E72240313D00E6F74F /* QLog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = QLog.framework;
+			remoteRef = 9F2A95E62240313D00E6F74F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F2A95E92240313D00E6F74F /* QLogTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = QLogTests.xctest;
+			remoteRef = 9F2A95E82240313D00E6F74F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F2A95EB2240313D00E6F74F /* QLogTestsHostApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QLogTestsHostApp.app;
+			remoteRef = 9F2A95EA2240313D00E6F74F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		9F3FF26722401BB70096E7C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -248,7 +364,6 @@
 			files = (
 				9F3FF27A22401BB90096E7C2 /* LaunchScreen.storyboard in Resources */,
 				9F3FF27722401BB90096E7C2 /* Assets.xcassets in Resources */,
-				9F3FF2A8224028430096E7C2 /* README.md in Resources */,
 				9F3FF27222401BB70096E7C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +445,7 @@
 			files = (
 				9F3FF26F22401BB70096E7C2 /* ViewController.swift in Sources */,
 				9F3FF26D22401BB70096E7C2 /* AppDelegate.swift in Sources */,
+				9F2A95F62240334300E6F74F /* main.swift in Sources */,
 				9F3FF27522401BB70096E7C2 /* TodoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2A95F8224033FE00E6F74F /* TestAppDelegate.swift in Sources */,
 				9F3FF28522401BBA0096E7C2 /* TodoListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +470,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F2A95EF2240318400E6F74F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QLog;
+			targetProxy = 9F2A95EE2240318400E6F74F /* PBXContainerItemProxy */;
+		};
 		9F3FF28222401BBA0096E7C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F3FF26822401BB70096E7C2 /* TodoList */;
@@ -504,6 +626,7 @@
 		9F3FF29522401BBA0096E7C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK9FBL7C9X;
@@ -522,6 +645,7 @@
 		9F3FF29622401BBA0096E7C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK9FBL7C9X;
