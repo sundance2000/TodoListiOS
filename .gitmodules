@@ -4,3 +4,6 @@
 [submodule "Frameworks/Alamofire"]
 	path = Frameworks/Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Frameworks/CoreStore"]
+	path = Frameworks/CoreStore
+	url = https://github.com/JohnEstropia/CoreStore.git
