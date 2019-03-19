@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christian Oberdörfer. All rights reserved.
 //
 
+import QLog
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        main()
         // Start coordinator
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.appCoordinator = AppCoordinator(window: self.window!)

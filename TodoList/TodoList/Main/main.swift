@@ -16,6 +16,6 @@ _ = UIApplicationMain(CommandLine.argc, args, nil, NSStringFromClass(appDelegate
 
 func main() {
     // QLog settings
-    QLog.loggers = [XcodeLogger(), FileLogger(), UiLogger.shared]
+    QLog.loggers = [XcodeLogger(logLevel: .highlight), FileLogger(), UiLogger.shared]
 
 }

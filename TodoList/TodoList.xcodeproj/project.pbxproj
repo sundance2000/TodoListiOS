@@ -24,6 +24,13 @@
 		9F791A1D224043BB003DA51B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A1C224043BB003DA51B /* App.swift */; };
 		9F791A1F224043F0003DA51B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A1E224043F0003DA51B /* Database.swift */; };
 		9F791A2222404446003DA51B /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A2122404446003DA51B /* DataStack.swift */; };
+		9F791A25224046B8003DA51B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A24224046B8003DA51B /* NetworkController.swift */; };
+		9F791A2722417376003DA51B /* TodoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A2622417376003DA51B /* TodoBase.swift */; };
+		9F791A2922417B26003DA51B /* TodoFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A2822417B26003DA51B /* TodoFull.swift */; };
+		9F791A2C22418147003DA51B /* TodoFullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A2B22418147003DA51B /* TodoFullTests.swift */; };
+		9F791A2E22418948003DA51B /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A2D22418948003DA51B /* TodoList.swift */; };
+		9F791A3022418965003DA51B /* TodoBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A2F22418965003DA51B /* TodoBaseTests.swift */; };
+		9F791A3222418A37003DA51B /* TodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A3122418A37003DA51B /* TodoListTests.swift */; };
 		9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93560E224037A90092009A /* AppCoordinator.swift */; };
 		9F935611224037D20092009A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935610224037D20092009A /* Coordinator.swift */; };
 		9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935612224037F40092009A /* RootViewCoordinator.swift */; };
@@ -232,6 +239,13 @@
 		9F791A1C224043BB003DA51B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		9F791A1E224043F0003DA51B /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9F791A2122404446003DA51B /* DataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
+		9F791A24224046B8003DA51B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		9F791A2622417376003DA51B /* TodoBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoBase.swift; sourceTree = "<group>"; };
+		9F791A2822417B26003DA51B /* TodoFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoFull.swift; sourceTree = "<group>"; };
+		9F791A2B22418147003DA51B /* TodoFullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFullTests.swift; sourceTree = "<group>"; };
+		9F791A2D22418948003DA51B /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		9F791A2F22418965003DA51B /* TodoBaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoBaseTests.swift; sourceTree = "<group>"; };
+		9F791A3122418A37003DA51B /* TodoListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListTests.swift; sourceTree = "<group>"; };
 		9F93560E224037A90092009A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9F935610224037D20092009A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F935612224037F40092009A /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
@@ -317,6 +331,7 @@
 			children = (
 				9F93561A22403BF90092009A /* Main */,
 				9F791A1B224043A6003DA51B /* Constants */,
+				9F791A23224046A0003DA51B /* Controllers */,
 				9F7919FC22404104003DA51B /* Database */,
 				9F93561922403BE00092009A /* Coordinators */,
 				9F791A2022404430003DA51B /* Util */,
@@ -333,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				9F93561B22403C0F0092009A /* Main */,
+				9F791A2A2241812E003DA51B /* Database */,
 				9F93561D22403C240092009A /* Coordinators */,
 				9F3FF28622401BBA0096E7C2 /* Info.plist */,
 				9F3FF29E22401CEC0096E7C2 /* .swiftlint.yml */,
@@ -354,6 +370,9 @@
 			isa = PBXGroup;
 			children = (
 				9F7919FD2240411D003DA51B /* Todo.swift */,
+				9F791A2622417376003DA51B /* TodoBase.swift */,
+				9F791A2822417B26003DA51B /* TodoFull.swift */,
+				9F791A2D22418948003DA51B /* TodoList.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -387,6 +406,24 @@
 				9F791A2122404446003DA51B /* DataStack.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		9F791A23224046A0003DA51B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F791A24224046B8003DA51B /* NetworkController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F791A2A2241812E003DA51B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9F791A2B22418147003DA51B /* TodoFullTests.swift */,
+				9F791A3122418A37003DA51B /* TodoListTests.swift */,
+				9F791A2F22418965003DA51B /* TodoBaseTests.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		9F93561922403BE00092009A /* Coordinators */ = {
@@ -765,8 +802,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F791A25224046B8003DA51B /* NetworkController.swift in Sources */,
+				9F791A2E22418948003DA51B /* TodoList.swift in Sources */,
 				9F791A2222404446003DA51B /* DataStack.swift in Sources */,
 				9F7919FE2240411D003DA51B /* Todo.swift in Sources */,
+				9F791A2922417B26003DA51B /* TodoFull.swift in Sources */,
 				9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */,
 				9F3FF26D22401BB70096E7C2 /* AppDelegate.swift in Sources */,
 				9F935611224037D20092009A /* Coordinator.swift in Sources */,
@@ -774,6 +814,7 @@
 				9F791A1D224043BB003DA51B /* App.swift in Sources */,
 				9F791A1F224043F0003DA51B /* Database.swift in Sources */,
 				9F2A95F62240334300E6F74F /* main.swift in Sources */,
+				9F791A2722417376003DA51B /* TodoBase.swift in Sources */,
 				9F3FF27522401BB70096E7C2 /* TodoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,6 +824,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F935618224039940092009A /* AppCoordinatorTests.swift in Sources */,
+				9F791A2C22418147003DA51B /* TodoFullTests.swift in Sources */,
+				9F791A3222418A37003DA51B /* TodoListTests.swift in Sources */,
+				9F791A3022418965003DA51B /* TodoBaseTests.swift in Sources */,
 				9F2A95F8224033FE00E6F74F /* TestAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
