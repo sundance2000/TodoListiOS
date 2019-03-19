@@ -40,7 +40,7 @@ class NetworkController {
         }
     }
 
-    func delete(id: Int, actionHandler: @escaping (_ statusCode: Int) -> Void) {
+    func delete(id: Int32, actionHandler: @escaping (_ statusCode: Int) -> Void) {
         var request = URLRequest(url: self.url.appendingPathComponent(String(id)))
         request.httpMethod = HTTPMethod.delete.rawValue
         request.setValue("application/json;", forHTTPHeaderField: "Accept")
@@ -52,7 +52,7 @@ class NetworkController {
         }
     }
 
-    func get(id: Int, actionHandler: @escaping (_ statusCode: Int, _ todoFull: TodoFull) -> Void) {
+    func get(id: Int32, actionHandler: @escaping (_ statusCode: Int, _ todoFull: TodoFull) -> Void) {
         var request = URLRequest(url: self.url.appendingPathComponent(String(id)))
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json;", forHTTPHeaderField: "Accept")
@@ -72,14 +72,12 @@ class NetworkController {
             guard let statusCode = response.response?.statusCode, let data = response.data else {
                 return
             }
-            guard let todoList = try? self.jsonDecoder.decode([TodoList].self, from: data) else {
-                return
-            }
+            let todoList = (try? self.jsonDecoder.decode([TodoList].self, from: data)) ?? []
             actionHandler(statusCode, todoList)
         }
     }
 
-    func update(id: Int, todoBase: TodoBase, actionHandler: @escaping (_ statusCode: Int) -> Void) {
+    func update(id: Int32, todoBase: TodoBase, actionHandler: @escaping (_ statusCode: Int) -> Void) {
         var request = URLRequest(url: self.url.appendingPathComponent(String(id)))
         request.httpMethod = HTTPMethod.put.rawValue
         request.setValue("application/json;", forHTTPHeaderField: "Accept")

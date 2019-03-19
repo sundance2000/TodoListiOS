@@ -10,7 +10,7 @@ import Foundation
 
 struct TodoFull: Codable, Equatable {
 
-    let id: Int?
+    let id: Int32?
     let desc: String?
     let done: Bool?
     let dueDate: String?

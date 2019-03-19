@@ -10,7 +10,7 @@ import Foundation
 
 struct TodoList: Codable, Equatable {
 
-    let id: Int?
+    let id: Int32?
     let done: Bool?
     let dueDate: String?
     let title: String?

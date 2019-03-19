@@ -14,21 +14,20 @@ class AppCoordinator: RootViewCoordinator {
 
     private let window: UIWindow
 
-    var rootViewController: UIViewController {
-        return self.viewController
-    }
+    private let todosTableViewCoordinator: TodosTableViewCoordinator
 
-    private lazy var viewController: UIViewController = {
-        return UIViewController()
-    }()
+    var rootViewController: UIViewController
 
     init(window: UIWindow) {
         self.window = window
-
+        let navigationController = UINavigationController()
+        self.todosTableViewCoordinator = TodosTableViewCoordinator(navigationController: navigationController)
+        self.rootViewController = navigationController
         self.window.rootViewController = self.rootViewController
     }
 
     func start() {
+        self.todosTableViewCoordinator.start()
         self.window.makeKeyAndVisible()
     }
 
