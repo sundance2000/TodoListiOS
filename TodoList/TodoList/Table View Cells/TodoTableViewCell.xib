@@ -18,8 +18,28 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-4f-MtK" customClass="QLabel" customModule="TodoList" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="lightblue"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MxL-4f-MtK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2Xh-DB-3bc"/>
+                    <constraint firstItem="MxL-4f-MtK" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="GEZ-AF-pME"/>
+                    <constraint firstItem="MxL-4f-MtK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="o1I-3I-VtI"/>
+                    <constraint firstItem="MxL-4f-MtK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="wZi-iy-hDC"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleLabel" destination="MxL-4f-MtK" id="xEJ-m7-ZAs"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

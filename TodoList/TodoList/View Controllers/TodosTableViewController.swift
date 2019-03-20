@@ -32,6 +32,7 @@ class TodosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setTheme()
         // Register self as observer to monitor
         self.monitor.addObserver(self)
         // Remove empty cells

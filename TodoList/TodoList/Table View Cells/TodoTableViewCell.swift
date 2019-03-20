@@ -8,11 +8,14 @@
 
 import UIKit
 
-class TodoTableViewCell: UITableViewCell {
+class TodoTableViewCell: QTableViewCell {
+
+    @IBOutlet weak var titleLabel: UILabel!
 
     var todo: Todo!
 
     func set(_ todo: Todo) {
+        self.titleLabel.text = todo.title
     }
 
 }
