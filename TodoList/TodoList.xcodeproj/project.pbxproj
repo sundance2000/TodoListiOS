@@ -86,6 +86,13 @@
 			remoteGlobalIDString = 9F3FF26822401BB70096E7C2;
 			remoteInfo = TodoList;
 		};
+		9F51CF8322424F1300E5F0BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F93563F22403D8A0092009A /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		9F791A092240422D003DA51B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */;
@@ -190,13 +197,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
-		};
-		9F93565A22403D960092009A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9F93563F22403D8A0092009A /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -519,8 +519,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9F51CF8422424F1300E5F0BF /* PBXTargetDependency */,
 				9F2A95EF2240318400E6F74F /* PBXTargetDependency */,
-				9F93565B22403D960092009A /* PBXTargetDependency */,
 				9F791A1A2240425C003DA51B /* PBXTargetDependency */,
 			);
 			name = TodoList;
@@ -889,15 +889,15 @@
 			target = 9F3FF26822401BB70096E7C2 /* TodoList */;
 			targetProxy = 9F3FF28C22401BBA0096E7C2 /* PBXContainerItemProxy */;
 		};
+		9F51CF8422424F1300E5F0BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 9F51CF8322424F1300E5F0BF /* PBXContainerItemProxy */;
+		};
 		9F791A1A2240425C003DA51B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "CoreStore iOS";
 			targetProxy = 9F791A192240425C003DA51B /* PBXContainerItemProxy */;
-		};
-		9F93565B22403D960092009A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = 9F93565A22403D960092009A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
