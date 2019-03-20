@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol TodoTableViewCellDelegate: class {
+
+    func selectTodo(_ todo: Todo)
+    func toggleTodo(_ todo: Todo)
+
+}
+
 class TodoTableViewCell: QTableViewCell {
 
     @IBOutlet weak var doneSwitch: QSwitch!
     @IBOutlet weak var titleButton: QButton!
+
+    weak var delegate: TodoTableViewCellDelegate?
 
     var todo: Todo!
 
@@ -26,7 +35,11 @@ class TodoTableViewCell: QTableViewCell {
     @IBAction func toggleDoneSwitch(_ sender: AnyObject) {
         // Update UI
         self.doneSwitch.on = !self.doneSwitch.on
-        self.todo.toggle()
+        self.delegate?.toggleTodo(todo)
     }
 
+    @IBAction func selectTodo(_ sender: Any) {
+        self.delegate?.selectTodo(todo)
+    }
+    
 }

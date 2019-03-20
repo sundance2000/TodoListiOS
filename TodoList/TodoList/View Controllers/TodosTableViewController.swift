@@ -11,6 +11,9 @@ import UIKit
 
 protocol TodosTableViewControllerDelegate: class {
 
+    func selectTodo(_ todo: Todo)
+    func toggleTodo(_ todo: Todo)
+
 }
 
 class TodosTableViewController: UITableViewController {
@@ -57,6 +60,7 @@ class TodosTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as! TodoTableViewCell
+        cell.delegate = self
         let todo = self.monitor[(indexPath as NSIndexPath).row]
         cell.set(todo)
         return cell
@@ -108,6 +112,20 @@ extension TodosTableViewController: ListObjectObserver {
     func listMonitor(_ monitor: ListMonitor<Todo>, didMoveObject object: Todo, fromIndexPath: IndexPath, toIndexPath: IndexPath) {
         self.tableView.deleteRows(at: [fromIndexPath], with: .automatic)
         self.tableView.insertRows(at: [toIndexPath], with: .automatic)
+    }
+
+}
+
+// MARK: - TodosTableViewControllerDelegate
+
+extension TodosTableViewController: TodoTableViewCellDelegate {
+
+    func selectTodo(_ todo: Todo) {
+        self.delegate?.selectTodo(todo)
+    }
+
+    func toggleTodo(_ todo: Todo) {
+        self.delegate?.toggleTodo(todo)
     }
 
 }

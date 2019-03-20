@@ -16,8 +16,19 @@ public extension Date {
         return formatter
     }()
 
+    static fileprivate var simpledateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+
     public var rfc3339String: String? {
         return Date.rfc3339dateFormatter.string(from: self)
+    }
+
+    public var simpleDateString: String? {
+        return Date.simpledateFormatter.string(from: self)
     }
 
 }

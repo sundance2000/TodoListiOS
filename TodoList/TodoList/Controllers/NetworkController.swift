@@ -60,6 +60,7 @@ class NetworkController {
             guard let statusCode = response.response?.statusCode, let data = response.data else {
                 return
             }
+            QLogDebug("GET(\(id)): \(statusCode):\(String(describing: String(data: data, encoding: .utf8)))")
             guard let todoFull = try? self.jsonDecoder.decode(TodoFull.self, from: data) else {
                 return
             }
@@ -87,6 +88,7 @@ class NetworkController {
             guard let statusCode = response.response?.statusCode else {
                 return
             }
+            QLogDebug("UPDATE(\(id):\(todoBase)): \(statusCode)")
             actionHandler(statusCode)
         }
     }

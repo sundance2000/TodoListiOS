@@ -23,10 +23,10 @@ class AppCoordinator: RootViewCoordinator {
         let navigationController = UINavigationController()
         self.todosTableViewCoordinator = TodosTableViewCoordinator(navigationController: navigationController)
         self.rootViewController = navigationController
-        self.window.rootViewController = self.rootViewController
     }
 
     func start() {
+        self.window.rootViewController = self.rootViewController
         self.todosTableViewCoordinator.start()
         self.window.makeKeyAndVisible()
     }

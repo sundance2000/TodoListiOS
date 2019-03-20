@@ -38,6 +38,9 @@
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="color" value="lightblue"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="selectTodo:" destination="KGk-i7-Jjw" eventType="touchDown" id="sEg-eX-w3p"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>

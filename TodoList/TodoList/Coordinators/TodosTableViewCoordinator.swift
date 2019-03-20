@@ -13,6 +13,7 @@ class TodosTableViewCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     private let todosTableViewController: TodosTableViewController
+    private var todoTableViewCoordinator: TodoTableViewCoordinator?
 
     /**
      Creates a new apps table coordinator
@@ -25,7 +26,6 @@ class TodosTableViewCoordinator: Coordinator {
     }
 
     func start() {
-        self.navigationController.navigationBar.topItem?.title = "Todos"
         self.navigationController.pushViewController(self.todosTableViewController, animated: true)
         NetworkController.shared.list(state: "all") { statusCode, todoList in
             Todo.save(todoList)
@@ -37,5 +37,17 @@ class TodosTableViewCoordinator: Coordinator {
 // MARK: - TodosTableViewControllerDelegate
 
 extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
+
+    func selectTodo(_ todo: Todo) {
+        NetworkController.shared.get(id: todo.id) { _, todoFull in
+            todo.update(todoFull)
+            self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: todo)
+            self.todoTableViewCoordinator?.start()
+        }
+    }
+
+    func toggleTodo(_ todo: Todo) {
+        todo.toggle()
+    }
 
 }

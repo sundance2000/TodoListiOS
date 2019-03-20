@@ -57,10 +57,29 @@ class Todo: NSManagedObject {
     }
 
     func toggle() {
+        let done = !self.done
+        // Update data from server
+        NetworkController.shared.get(id: self.id) { _, todoFull in
+            self.update(todoFull)
+        }
+        // Toggle todo and update server
         self.edit { todo, _ in
-            todo.done = !todo.done
+            todo.done = done
             // Update server
             NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+        }
+    }
+
+    func update(_ todoFull: TodoFull) {
+        self.edit { todo, _ in
+            guard let id = todoFull.id, let done = todoFull.done, let dueDate = todoFull.dueDate?.rfc3339date, let title = todoFull.title else {
+                return
+            }
+            todo.id = id
+            todo.desc = todoFull.desc
+            todo.done = done
+            todo.dueDate = dueDate
+            todo.title = title
         }
     }
 
