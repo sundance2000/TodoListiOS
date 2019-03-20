@@ -19,26 +19,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-4f-MtK" customClass="QLabel" customModule="TodoList" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIs-iZ-kBJ" customClass="QSwitch" customModule="TodoList" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="qIs-iZ-kBJ" secondAttribute="height" multiplier="1:1" id="fd6-jg-z4S"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="lightblue"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="color" value="lightblue"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                        <connections>
+                            <action selector="toggleDoneSwitch:" destination="KGk-i7-Jjw" eventType="touchDown" id="58w-Oz-40H"/>
+                        </connections>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-7A-gpo" customClass="QButton" customModule="TodoList" customModuleProvider="target">
+                        <rect key="frame" x="43.5" y="0.0" width="276.5" height="43.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="color" value="lightblue"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MxL-4f-MtK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2Xh-DB-3bc"/>
-                    <constraint firstItem="MxL-4f-MtK" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="GEZ-AF-pME"/>
-                    <constraint firstItem="MxL-4f-MtK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="o1I-3I-VtI"/>
-                    <constraint firstItem="MxL-4f-MtK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="wZi-iy-hDC"/>
+                    <constraint firstItem="qIs-iZ-kBJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DeY-Jf-SuF"/>
+                    <constraint firstItem="qIs-iZ-kBJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IXI-TB-7SP"/>
+                    <constraint firstItem="yMN-7A-gpo" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="UQj-vY-Kgp"/>
+                    <constraint firstItem="yMN-7A-gpo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XDq-b3-dEa"/>
+                    <constraint firstItem="yMN-7A-gpo" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="kH4-kS-KLW"/>
+                    <constraint firstItem="qIs-iZ-kBJ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="pjT-JB-Rad"/>
+                    <constraint firstItem="qIs-iZ-kBJ" firstAttribute="trailing" secondItem="yMN-7A-gpo" secondAttribute="leading" id="xnI-zL-red"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="titleLabel" destination="MxL-4f-MtK" id="xEJ-m7-ZAs"/>
+                <outlet property="doneSwitch" destination="qIs-iZ-kBJ" id="isR-Ly-3y1"/>
+                <outlet property="titleButton" destination="yMN-7A-gpo" id="qYr-3P-ORg"/>
             </connections>
         </tableViewCell>
     </objects>

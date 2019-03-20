@@ -7,3 +7,6 @@
 [submodule "Frameworks/CoreStore"]
 	path = Frameworks/CoreStore
 	url = https://github.com/JohnEstropia/CoreStore.git
+[submodule "GameIcons"]
+	path = GameIcons
+	url = https://github.com/QuantumApplications/GameIcons.git

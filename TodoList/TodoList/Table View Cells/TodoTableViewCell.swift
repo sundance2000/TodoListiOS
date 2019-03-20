@@ -10,12 +10,23 @@ import UIKit
 
 class TodoTableViewCell: QTableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var doneSwitch: QSwitch!
+    @IBOutlet weak var titleButton: QButton!
 
     var todo: Todo!
 
     func set(_ todo: Todo) {
-        self.titleLabel.text = todo.title
+        self.todo = todo
+        self.doneSwitch.on = todo.done
+        self.titleButton.label.text = todo.title
+    }
+
+    // MARK: - Navigation
+
+    @IBAction func toggleDoneSwitch(_ sender: AnyObject) {
+        // Update UI
+        self.doneSwitch.on = !self.doneSwitch.on
+        self.todo.toggle()
     }
 
 }

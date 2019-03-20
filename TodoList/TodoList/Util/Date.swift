@@ -1,5 +1,5 @@
 //
-//  String.swift
+//  Date.swift
 //  TodoList
 //
 //  Created by Christian Oberdörfer on 20.03.19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension String {
+public extension Date {
 
     static fileprivate var rfc3339dateFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
@@ -16,12 +16,8 @@ public extension String {
         return formatter
     }()
 
-    public var localized: String {
-        return NSLocalizedString(self, comment: "")
-    }
-
-    public var rfc3339date: Date? {
-        return String.rfc3339dateFormatter.date(from: self)
+    public var rfc3339String: String? {
+        return Date.rfc3339dateFormatter.string(from: self)
     }
 
 }

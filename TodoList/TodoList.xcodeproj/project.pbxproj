@@ -23,6 +23,12 @@
 		9F76F4592242629B00EE2E2E /* QColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F4582242629B00EE2E2E /* QColor.swift */; };
 		9F76F45B224262E500EE2E2E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F45A224262E500EE2E2E /* String.swift */; };
 		9F76F45E2242632C00EE2E2E /* QLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F45D2242632C00EE2E2E /* QLabel.swift */; };
+		9F76F4602242664000EE2E2E /* QButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F45F2242664000EE2E2E /* QButton.swift */; };
+		9F76F46B22426A9A00EE2E2E /* GameIcons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F76F46822426A8900EE2E2E /* GameIcons.framework */; };
+		9F76F46C22426A9A00EE2E2E /* GameIcons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F76F46822426A8900EE2E2E /* GameIcons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F76F47022426AA200EE2E2E /* Macaw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F76F46F22426AA200EE2E2E /* Macaw.framework */; };
+		9F76F47122426AA200EE2E2E /* Macaw.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F76F46F22426AA200EE2E2E /* Macaw.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F76F47322426D2900EE2E2E /* QSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F47222426D2900EE2E2E /* QSwitch.swift */; };
 		9F7919FE2240411D003DA51B /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7919FD2240411D003DA51B /* Todo.swift */; };
 		9F791A172240425C003DA51B /* CoreStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F791A0A2240422D003DA51B /* CoreStore.framework */; };
 		9F791A182240425C003DA51B /* CoreStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F791A0A2240422D003DA51B /* CoreStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -40,6 +46,7 @@
 		9F791A3922419951003DA51B /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A3722419951003DA51B /* TodoTableViewCell.swift */; };
 		9F791A3A22419951003DA51B /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F791A3822419951003DA51B /* TodoTableViewCell.xib */; };
 		9F791A3C22419997003DA51B /* TodosTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F791A3B22419997003DA51B /* TodosTableViewCoordinator.swift */; };
+		9F7C37A32242879200A6CF66 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C37A22242879200A6CF66 /* Date.swift */; };
 		9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93560E224037A90092009A /* AppCoordinator.swift */; };
 		9F935611224037D20092009A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935610224037D20092009A /* Coordinator.swift */; };
 		9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935612224037F40092009A /* RootViewCoordinator.swift */; };
@@ -97,6 +104,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
+		};
+		9F76F46722426A8900EE2E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9F8B28651FDDEE8F006C8917;
+			remoteInfo = GameIcons;
+		};
+		9F76F46922426A8900EE2E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9F8B286E1FDDEE8F006C8917;
+			remoteInfo = GameIconsTests;
+		};
+		9F76F46D22426A9A00EE2E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F8B28641FDDEE8F006C8917;
+			remoteInfo = GameIcons;
 		};
 		9F791A092240422D003DA51B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -214,7 +242,9 @@
 			files = (
 				9F2A95F32240330100E6F74F /* Zip.framework in Embed Frameworks */,
 				9F791A182240425C003DA51B /* CoreStore.framework in Embed Frameworks */,
+				9F76F46C22426A9A00EE2E2E /* GameIcons.framework in Embed Frameworks */,
 				9F93565922403D960092009A /* Alamofire.framework in Embed Frameworks */,
+				9F76F47122426AA200EE2E2E /* Macaw.framework in Embed Frameworks */,
 				9F2A95ED2240318400E6F74F /* QLog.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -248,6 +278,10 @@
 		9F76F4582242629B00EE2E2E /* QColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QColor.swift; sourceTree = "<group>"; };
 		9F76F45A224262E500EE2E2E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9F76F45D2242632C00EE2E2E /* QLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLabel.swift; sourceTree = "<group>"; };
+		9F76F45F2242664000EE2E2E /* QButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QButton.swift; sourceTree = "<group>"; };
+		9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GameIcons.xcodeproj; path = ../GameIcons/GameIcons/GameIcons.xcodeproj; sourceTree = "<group>"; };
+		9F76F46F22426AA200EE2E2E /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F76F47222426D2900EE2E2E /* QSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSwitch.swift; sourceTree = "<group>"; };
 		9F7919FD2240411D003DA51B /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreStore.xcodeproj; path = ../Frameworks/CoreStore/CoreStore.xcodeproj; sourceTree = "<group>"; };
 		9F791A1C224043BB003DA51B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -264,6 +298,7 @@
 		9F791A3722419951003DA51B /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		9F791A3822419951003DA51B /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		9F791A3B22419997003DA51B /* TodosTableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewCoordinator.swift; sourceTree = "<group>"; };
+		9F7C37A22242879200A6CF66 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9F93560E224037A90092009A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9F935610224037D20092009A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F935612224037F40092009A /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
@@ -278,7 +313,9 @@
 			files = (
 				9F2A95F22240330100E6F74F /* Zip.framework in Frameworks */,
 				9F791A172240425C003DA51B /* CoreStore.framework in Frameworks */,
+				9F76F46B22426A9A00EE2E2E /* GameIcons.framework in Frameworks */,
 				9F93565822403D960092009A /* Alamofire.framework in Frameworks */,
+				9F76F47022426AA200EE2E2E /* Macaw.framework in Frameworks */,
 				9F2A95EC2240318400E6F74F /* QLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +342,7 @@
 			children = (
 				9F93563F22403D8A0092009A /* Alamofire.xcodeproj */,
 				9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */,
+				9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */,
 				9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */,
 			);
 			name = Frameworks;
@@ -323,6 +361,7 @@
 		9F3FF26022401BB70096E7C2 = {
 			isa = PBXGroup;
 			children = (
+				9F76F46F22426AA200EE2E2E /* Macaw.framework */,
 				9F3FF26B22401BB70096E7C2 /* TodoList */,
 				9F3FF28322401BBA0096E7C2 /* TodoListTests */,
 				9F3FF28E22401BBA0096E7C2 /* TodoListUITests */,
@@ -390,9 +429,20 @@
 		9F76F45C2242630600EE2E2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F76F45F2242664000EE2E2E /* QButton.swift */,
 				9F76F45D2242632C00EE2E2E /* QLabel.swift */,
+				9F76F47222426D2900EE2E2E /* QSwitch.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9F76F46222426A8900EE2E2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F76F46822426A8900EE2E2E /* GameIcons.framework */,
+				9F76F46A22426A8900EE2E2E /* GameIconsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		9F7919FC22404104003DA51B /* Database */ = {
@@ -433,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				9F791A2122404446003DA51B /* DataStack.swift */,
+				9F7C37A22242879200A6CF66 /* Date.swift */,
 				9F76F4582242629B00EE2E2E /* QColor.swift */,
 				9F76F45A224262E500EE2E2E /* String.swift */,
 			);
@@ -545,6 +596,7 @@
 				9F51CF8422424F1300E5F0BF /* PBXTargetDependency */,
 				9F2A95EF2240318400E6F74F /* PBXTargetDependency */,
 				9F791A1A2240425C003DA51B /* PBXTargetDependency */,
+				9F76F46E22426A9A00EE2E2E /* PBXTargetDependency */,
 			);
 			name = TodoList;
 			productName = TodoList;
@@ -633,6 +685,10 @@
 					ProjectRef = 9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */;
 				},
 				{
+					ProductGroup = 9F76F46222426A8900EE2E2E /* Products */;
+					ProjectRef = 9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */;
+				},
+				{
 					ProductGroup = 9F2A95DE2240313C00E6F74F /* Products */;
 					ProjectRef = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
 				},
@@ -666,6 +722,20 @@
 			fileType = wrapper.application;
 			path = QLogTestsHostApp.app;
 			remoteRef = 9F2A95EA2240313D00E6F74F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F76F46822426A8900EE2E2E /* GameIcons.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GameIcons.framework;
+			remoteRef = 9F76F46722426A8900EE2E2E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F76F46A22426A8900EE2E2E /* GameIconsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GameIconsTests.xctest;
+			remoteRef = 9F76F46922426A8900EE2E2E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9F791A0A2240422D003DA51B /* CoreStore.framework */ = {
@@ -858,12 +928,15 @@
 				9F76F4462242620600EE2E2E /* QTableViewController.swift in Sources */,
 				9F791A2E22418948003DA51B /* TodoList.swift in Sources */,
 				9F791A2222404446003DA51B /* DataStack.swift in Sources */,
+				9F76F4602242664000EE2E2E /* QButton.swift in Sources */,
 				9F7919FE2240411D003DA51B /* Todo.swift in Sources */,
+				9F7C37A32242879200A6CF66 /* Date.swift in Sources */,
 				9F791A2922417B26003DA51B /* TodoFull.swift in Sources */,
 				9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */,
 				9F3FF26D22401BB70096E7C2 /* AppDelegate.swift in Sources */,
 				9F935611224037D20092009A /* Coordinator.swift in Sources */,
 				9F791A35224198F1003DA51B /* TodosTableViewController.swift in Sources */,
+				9F76F47322426D2900EE2E2E /* QSwitch.swift in Sources */,
 				9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */,
 				9F791A1D224043BB003DA51B /* App.swift in Sources */,
 				9F76F4572242625F00EE2E2E /* QTableViewCell.swift in Sources */,
@@ -921,6 +994,11 @@
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
 			targetProxy = 9F51CF8322424F1300E5F0BF /* PBXContainerItemProxy */;
+		};
+		9F76F46E22426A9A00EE2E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GameIcons;
+			targetProxy = 9F76F46D22426A9A00EE2E2E /* PBXContainerItemProxy */;
 		};
 		9F791A1A2240425C003DA51B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

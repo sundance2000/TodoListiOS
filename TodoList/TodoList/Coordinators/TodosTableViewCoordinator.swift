@@ -27,7 +27,7 @@ class TodosTableViewCoordinator: Coordinator {
     func start() {
         self.navigationController.navigationBar.topItem?.title = "Todos"
         self.navigationController.pushViewController(self.todosTableViewController, animated: true)
-        NetworkController.shared.list { statusCode, todoList in
+        NetworkController.shared.list(state: "all") { statusCode, todoList in
             Todo.save(todoList)
         }
     }
