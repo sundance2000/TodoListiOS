@@ -38,5 +38,4 @@ class StringTests: XCTestCase {
         XCTAssertEqual(string.rfc3339date, date)
     }
 
-
 }

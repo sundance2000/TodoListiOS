@@ -25,13 +25,13 @@ class TodoTableViewCoordinator: Coordinator {
         self.navigationController = navigationController
         self.todo = todo
         let storyboard = UIStoryboard(name: "TodoTableViewController", bundle: nil)
-        let navigationController = storyboard.instantiateInitialViewController()!
-        self.todoTableViewController = navigationController.children[0] as! TodoTableViewController
+        self.todoTableViewController = storyboard.instantiateInitialViewController()! as! TodoTableViewController
         self.todoTableViewController.delegate = self
         self.todoTableViewController.todo = self.todo
     }
 
     func start() {
+        self.navigationController.setToolbarHidden(false, animated: true)
         self.navigationController.pushViewController(self.todoTableViewController, animated: true)
         NetworkController.shared.list(state: "all") { statusCode, todoList in
             Todo.save(todoList)
@@ -48,6 +48,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
     }
 
     func back() {
+        self.navigationController.setToolbarHidden(true, animated: true)
         guard let todoFull = self.todo?.todoFull else {
             QLogError("Todo is nil")
             return
@@ -60,6 +61,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
     }
 
     func delete() {
+        self.navigationController.popViewController(animated: true)
         self.todoTableViewController.dismiss(animated: true, completion: nil)
         guard let todo = self.todo else {
             QLogError("Todo is nil")

@@ -31,7 +31,6 @@ class TodoTableViewController: UITableViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var doneTitleLabel: UILabel!
     @IBOutlet weak var doneSwitch: UISwitch!
-    @IBOutlet weak var deleteButton: UIBarButtonItem!
 
     weak var delegate: TodoTableViewControllerDelegate?
 
@@ -53,8 +52,11 @@ class TodoTableViewController: UITableViewController {
         self.datePickerButtonPlusOneYear.setTitle(Texts.TodoTableViewController.plusOneYear, for: .normal)
         self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
         self.doneTitleLabel.text = Texts.TodoTableViewController.done
-        self.deleteButton.title = Texts.TodoTableViewController.delete
         self.hideDatePicker()
+        // Set toolbar
+        let deleteBarButtonItem = UIBarButtonItem(title: Texts.TodoTableViewController.delete, style: .plain, target: self, action: #selector(deleteTodo))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        self.toolbarItems = [spacer, deleteBarButtonItem, spacer]
         self.loadData()
     }
 
@@ -139,7 +141,7 @@ class TodoTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    @IBAction func deleteTodo(_ sender: UIBarButtonItem) {
+    @objc func deleteTodo() {
         self.delegate?.delete()
     }
 
