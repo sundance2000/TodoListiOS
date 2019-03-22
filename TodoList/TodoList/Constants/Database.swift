@@ -25,24 +25,4 @@ struct Database {
         return dataStack
     }()
 
-    static func edit<T: DynamicObject>(_ object: T, transaction: BaseDataTransaction? = nil, handler: @escaping (_ object: T, _ transaction: BaseDataTransaction) -> Void) {
-        Database.dataStack.edit(object, transaction: transaction, handler: handler)
-    }
-
-    static func edit<T: DynamicObject>(_ object: T, transaction: BaseDataTransaction? = nil, handler: @escaping (_ object: T, _ transaction: BaseDataTransaction) -> Void, completion: @escaping () -> Void) {
-        Database.dataStack.edit(object, transaction: transaction, handler: handler, completion: completion)
-    }
-
-    static func execute(transaction: BaseDataTransaction? = nil, handler: @escaping (_ transaction: BaseDataTransaction) -> Void) {
-        Database.dataStack.execute(transaction: transaction, handler: handler)
-    }
-
-    static func execute(transaction: BaseDataTransaction? = nil, handler: @escaping (_ transaction: BaseDataTransaction) -> Void, completion: @escaping () -> Void) {
-        Database.dataStack.execute(transaction: transaction, handler: handler, completion: completion)
-    }
-
-    static func getString<T: DynamicObject>(from object: T, transaction: BaseDataTransaction? = nil, handler: @escaping (_ object: T, _ transaction: BaseDataTransaction) -> String?) -> String? {
-        return Database.dataStack.getString(from: object, transaction: transaction, handler: handler)
-    }
-
 }

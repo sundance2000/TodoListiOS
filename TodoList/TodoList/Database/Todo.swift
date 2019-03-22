@@ -21,18 +21,18 @@ class Todo: NSManagedObject {
         return TodoBase(desc: self.desc, done: self.done, dueDate: self.dueDate.rfc3339String, title: self.title)
     }
 
-    static func delete(_ ids: Set<Int32>, transaction: BaseDataTransaction? = nil) {
-        Database.execute(transaction: transaction) { transaction in
+    static func delete(_ ids: Set<Int32>) {
+        Database.dataStack.perform(asynchronous: { transaction in
             for id in ids {
                 if let todo = transaction.fetchOne(From<Todo>().where(\.id == id)) {
                     transaction.delete(todo)
                 }
             }
-        }
+        }, completion: { _ in })
     }
 
     static func save(_ todoListList: [TodoList]) {
-        Database.execute { transaction in
+        Database.dataStack.perform(asynchronous: { transaction in
             // Store current todo IDs to track deleted switches
             var oldIds = Set((transaction.fetchAll(From<Todo>()) ?? []).map { $0.id })
             for todoList in todoListList {
@@ -49,34 +49,28 @@ class Todo: NSManagedObject {
             }
             // Delete todos with IDs not seen
             Todo.delete(oldIds)
-        }
-    }
-
-    func edit(transaction: BaseDataTransaction? = nil, handler: @escaping (_ todo: Todo, _ transaction: BaseDataTransaction) -> Void) {
-        Database.edit(self, transaction: transaction, handler: handler)
-    }
-
-    func edit(transaction: BaseDataTransaction? = nil, handler: @escaping (_ todo: Todo, _ transaction: BaseDataTransaction) -> Void, completion: @escaping () -> Void) {
-        Database.edit(self, transaction: transaction, handler: handler, completion: completion)
+        }, completion: { _ in })
     }
 
     func toggle() {
         let done = !self.done
-        // Update data from server
+        // Update from server
         NetworkController.shared.get(id: self.id) { _, todoFull in
-            self.update(todoFull, completion: {})
-        }
-        // Toggle todo and update server
-        self.edit { todo, _ in
-            todo.done = done
-            // Update server
-            NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+            // Update database
+            self.update(todoFull) { todo  in
+                todo.done = done
+                // Update to server
+                NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+            }
         }
     }
 
-    func update(_ todoFull: TodoFull, completion: @escaping () -> Void) {
-        self.edit(handler: { todo, _ in
-            guard let id = todoFull.id, let done = todoFull.done, let dueDate = todoFull.dueDate?.rfc3339date, let title = todoFull.title else {
+    func update(_ todoFull: TodoFull, completion: @escaping (_ todo: Todo) -> Void) {
+        guard let id = todoFull.id, let done = todoFull.done, let dueDate = todoFull.dueDate?.rfc3339date, let title = todoFull.title else {
+            return
+        }
+        Database.dataStack.perform(asynchronous: { transaction in
+            guard let todo = transaction.edit(self) else {
                 return
             }
             todo.id = id
@@ -84,8 +78,10 @@ class Todo: NSManagedObject {
             todo.done = done
             todo.dueDate = dueDate
             todo.title = title
-        }, completion: {
-            completion()
+        }, completion: { _ in
+            if let todo = Database.dataStack.fetchOne(From<Todo>().where(\.id == id)) {
+                completion(todo)
+            }
         })
     }
 
