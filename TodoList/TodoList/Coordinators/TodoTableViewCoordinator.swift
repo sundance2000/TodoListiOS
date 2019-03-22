@@ -55,7 +55,20 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         // Update database
         self.todo?.update(todoFull) { todo  in
             // Update to server
-            NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+            NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase) { _ in }
+        }
+    }
+
+    func delete() {
+        self.todoTableViewController.dismiss(animated: true, completion: nil)
+        guard let todo = self.todo else {
+            QLogError("Todo is nil")
+            return
+        }
+        // Update database
+        todo.delete() {
+            // Update to server
+            NetworkController.shared.delete(id: todo.id) { _ in }
         }
     }
 

@@ -11,8 +11,9 @@ import UIKit
 
 protocol TodosTableViewControllerDelegate: class {
 
-    func selectTodo(_ todo: Todo)
-    func toggleTodo(_ todo: Todo)
+    func delete(_ todo: Todo)
+    func select(_ todo: Todo)
+    func toggle(_ todo: Todo)
 
 }
 
@@ -64,6 +65,17 @@ class TodosTableViewController: UITableViewController {
         let todo = self.monitor[(indexPath as NSIndexPath).row]
         cell.set(todo)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let todo = self.monitor[(indexPath as NSIndexPath).row]
+            self.delegate?.delete(todo)
+        }
     }
 
     // MARK: - Navigation
@@ -120,12 +132,12 @@ extension TodosTableViewController: ListObjectObserver {
 
 extension TodosTableViewController: TodoTableViewCellDelegate {
 
-    func selectTodo(_ todo: Todo) {
-        self.delegate?.selectTodo(todo)
+    func select(_ todo: Todo) {
+        self.delegate?.select(todo)
     }
 
-    func toggleTodo(_ todo: Todo) {
-        self.delegate?.toggleTodo(todo)
+    func toggle(_ todo: Todo) {
+        self.delegate?.toggle(todo)
     }
 
 }

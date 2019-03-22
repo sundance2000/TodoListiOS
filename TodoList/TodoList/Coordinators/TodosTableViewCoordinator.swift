@@ -38,17 +38,37 @@ class TodosTableViewCoordinator: Coordinator {
 
 extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
 
-    func selectTodo(_ todo: Todo) {
+    func delete(_ todo: Todo) {
+        // Update database
+        todo.delete() {
+            // Update to server
+            NetworkController.shared.delete(id: todo.id) { _ in }
+        }
+    }
+
+    func select(_ todo: Todo) {
+        // Update from server
         NetworkController.shared.get(id: todo.id) { _, todoFull in
+            // Update database
             todo.update(todoFull) { todo in
+                // Show todo
                 self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: todo)
                 self.todoTableViewCoordinator?.start()
             }
         }
     }
 
-    func toggleTodo(_ todo: Todo) {
-        todo.toggle()
+    func toggle(_ todo: Todo) {
+        let done = !todo.done
+        // Update from server
+        NetworkController.shared.get(id: todo.id) { _, todoFull in
+            // Update database
+            todo.update(todoFull) { todo  in
+                todo.done = done
+                // Update to server
+                NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+            }
+        }
     }
 
 }

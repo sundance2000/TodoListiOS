@@ -10,8 +10,8 @@ import UIKit
 
 protocol TodoTableViewCellDelegate: class {
 
-    func selectTodo(_ todo: Todo)
-    func toggleTodo(_ todo: Todo)
+    func select(_ todo: Todo)
+    func toggle(_ todo: Todo)
 
 }
 
@@ -35,11 +35,11 @@ class TodoTableViewCell: QTableViewCell {
     @IBAction func toggleDoneSwitch(_ sender: AnyObject) {
         // Update UI
         self.doneSwitch.on = !self.doneSwitch.on
-        self.delegate?.toggleTodo(todo)
+        self.delegate?.toggle(todo)
     }
 
     @IBAction func selectTodo(_ sender: Any) {
-        self.delegate?.selectTodo(todo)
+        self.delegate?.select(todo)
     }
 
 }

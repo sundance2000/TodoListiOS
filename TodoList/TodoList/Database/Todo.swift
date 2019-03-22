@@ -56,17 +56,15 @@ class Todo: NSManagedObject {
         }, completion: { _ in })
     }
 
-    func toggle() {
-        let done = !self.done
-        // Update from server
-        NetworkController.shared.get(id: self.id) { _, todoFull in
-            // Update database
-            self.update(todoFull) { todo  in
-                todo.done = done
-                // Update to server
-                NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+    func delete(completion: @escaping () -> Void) {
+        Database.dataStack.perform(asynchronous: { transaction in
+            guard let todo = transaction.edit(self) else {
+                return
             }
-        }
+            transaction.delete(todo)
+        }, completion: { _ in
+            completion()
+        })
     }
 
     func update(_ todoFull: TodoFull, completion: @escaping (_ todo: Todo) -> Void) {

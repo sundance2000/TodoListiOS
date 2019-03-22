@@ -12,6 +12,7 @@ protocol TodoTableViewControllerDelegate: class {
 
     func abort()
     func back()
+    func delete()
     func save()
 
 }
@@ -138,7 +139,7 @@ class TodoTableViewController: UITableViewController {
     // MARK: - Navigation
 
     @IBAction func deleteTodo(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.delegate?.delete()
     }
 
     @IBAction func datePickerDidChange(_ sender: UIDatePicker) {
