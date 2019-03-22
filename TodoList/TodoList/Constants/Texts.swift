@@ -14,7 +14,7 @@ class Texts {
     // MARK: - View Controllers
 
     class TodoTableViewController {
-        static let title = "Todo".localized
+        static let title = "Title".localized
         static let delete = "Delete".localized
         static let description = "Description".localized
         static let descriptionTextFieldPlaceholder = "Description".localized

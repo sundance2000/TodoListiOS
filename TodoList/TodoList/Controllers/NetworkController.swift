@@ -75,7 +75,7 @@ class NetworkController {
         }
     }
 
-    func list(state: String = "unfinished", limit: Int = 5, offset: Int = 0, actionHandler: @escaping (_ statusCode: Int, _ todoList: [TodoList]) -> Void) {
+    func list(state: String = "unfinished", limit: Int = 999, offset: Int = 0, actionHandler: @escaping (_ statusCode: Int, _ todoList: [TodoList]) -> Void) {
         Alamofire.request(self.url.absoluteString, method: .get, parameters: ["state": state, "limit": limit, "offset": offset], headers: ["Accept": "application/json"]).responseJSON { response in
             guard let statusCode = response.response?.statusCode, let data = response.data else {
                 QLogError("Cannot get data from response \(response)")

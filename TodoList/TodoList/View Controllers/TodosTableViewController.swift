@@ -11,6 +11,7 @@ import UIKit
 
 protocol TodosTableViewControllerDelegate: class {
 
+    func add()
     func delete(_ todo: Todo)
     func select(_ todo: Todo)
     func toggle(_ todo: Todo)
@@ -43,6 +44,8 @@ class TodosTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         // Register table cell class from nib
         self.tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoTableViewCell")
+        // Add bar buttons
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -84,6 +87,10 @@ class TodosTableViewController: UITableViewController {
     }
 
     // MARK: - Navigation
+
+    @objc func add() {
+        self.delegate?.add()
+    }
 
 }
 

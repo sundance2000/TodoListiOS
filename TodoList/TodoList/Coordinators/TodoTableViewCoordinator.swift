@@ -31,10 +31,14 @@ class TodoTableViewCoordinator: Coordinator {
     }
 
     func start() {
-        self.navigationController.setToolbarHidden(false, animated: true)
-        self.navigationController.pushViewController(self.todoTableViewController, animated: true)
-        NetworkController.shared.list(state: "all") { statusCode, todoList in
-            Todo.save(todoList)
+        // If no todo is set, show view controller modally to create a new todo
+        if self.todo == nil {
+            let navigationContoller = UINavigationController(rootViewController: self.todoTableViewController)
+            self.navigationController.present(navigationContoller, animated: true)
+        } else {
+            // Else push the view controller to show an existing todo
+            self.navigationController.setToolbarHidden(false, animated: true)
+            self.navigationController.pushViewController(self.todoTableViewController, animated: true)
         }
     }
 
@@ -43,9 +47,6 @@ class TodoTableViewCoordinator: Coordinator {
 // MARK: - TodosTableViewControllerDelegate
 
 extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
-
-    func abort() {
-    }
 
     func back() {
         self.navigationController.setToolbarHidden(true, animated: true)
@@ -60,9 +61,12 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         }
     }
 
+    func cancel() {
+        self.todoTableViewController.dismiss(animated: true)
+    }
+
     func delete() {
         self.navigationController.popViewController(animated: true)
-        self.todoTableViewController.dismiss(animated: true, completion: nil)
         guard let todo = self.todo else {
             QLogError("Todo is nil")
             return
@@ -74,7 +78,13 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         }
     }
 
-    func save() {
+    func save(_ todoBase: TodoBase) {
+        self.todoTableViewController.dismiss(animated: true)
+        // Update to server
+        NetworkController.shared.create(todoBase: todoBase) { _, todoFull in
+            // Update database
+            Todo.save(todoFull)
+        }
     }
 
 }

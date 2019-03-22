@@ -36,6 +36,21 @@ class Todo: NSManagedObject {
         }, completion: { _ in })
     }
 
+    static func save(_ todoFull: TodoFull) {
+        Database.dataStack.perform(asynchronous: { transaction in
+            guard let id = todoFull.id, let done = todoFull.done, let dueDate = todoFull.dueDate?.rfc3339date, let title = todoFull.title else {
+                QLogError("todo is incomplete: \(todoFull)")
+                return
+            }
+            let todo = transaction.fetchOne(From<Todo>().where(\.id == id)) ?? transaction.create(Into<Todo>())
+            todo.id = id
+            todo.desc = todoFull.desc
+            todo.done = done
+            todo.dueDate = dueDate
+            todo.title = title
+        }, completion: { _ in })
+    }
+
     static func save(_ todoListList: [TodoList]) {
         Database.dataStack.perform(asynchronous: { transaction in
             // Store current todo IDs to track deleted switches

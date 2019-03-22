@@ -32,6 +32,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
+                                                    <connections>
+                                                        <action selector="titleTextFieldEditingChanged:" destination="FvT-j3-Ds1" eventType="editingChanged" id="GKv-ry-1nd"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

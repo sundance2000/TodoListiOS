@@ -38,6 +38,12 @@ class TodosTableViewCoordinator: Coordinator {
 
 extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
 
+    func add() {
+        // Show add todo
+        self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: nil)
+        self.todoTableViewCoordinator?.start()
+    }
+
     func delete(_ todo: Todo) {
         // Update database
         todo.delete() {

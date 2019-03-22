@@ -6,14 +6,15 @@
 //  Copyright © 2019 Christian Oberdörfer. All rights reserved.
 //
 
+import QLog
 import UIKit
 
 protocol TodoTableViewControllerDelegate: class {
 
-    func abort()
     func back()
+    func cancel()
     func delete()
-    func save()
+    func save(_ todoBase: TodoBase)
 
 }
 
@@ -53,11 +54,22 @@ class TodoTableViewController: UITableViewController {
         self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
         self.doneTitleLabel.text = Texts.TodoTableViewController.done
         self.hideDatePicker()
-        // Set toolbar
-        let deleteBarButtonItem = UIBarButtonItem(title: Texts.TodoTableViewController.delete, style: .plain, target: self, action: #selector(deleteTodo))
-        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        self.toolbarItems = [spacer, deleteBarButtonItem, spacer]
         self.loadData()
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if self.presentingViewController == nil {
+            // Pushed
+            let deleteBarButtonItem = UIBarButtonItem(title: Texts.TodoTableViewController.delete, style: .plain, target: self, action: #selector(deleteTodo))
+            let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            self.toolbarItems = [spacer, deleteBarButtonItem, spacer]
+        } else {
+            // Modal
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,6 +93,9 @@ class TodoTableViewController: UITableViewController {
             self.datePicker.date = todo.dueDate
             self.descriptionTextField.text = todo.desc
             self.doneSwitch.isOn = todo.done
+        } else {
+            self.datePicker.date = Date()
+            self.dueDateLabel.text = self.datePicker.date.simpleDateString
         }
     }
 
@@ -141,8 +156,33 @@ class TodoTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
+    @objc func cancel() {
+        self.delegate?.cancel()
+    }
+
+    @objc func save() {
+        let description = self.descriptionTextField.text
+        let done = self.doneSwitch.isOn
+        let dueDate = self.datePicker.date.rfc3339String
+        guard let title = self.titleTextField.text else {
+            QLogError("Title not set")
+            return
+        }
+        let todoBase = TodoBase(desc: description, done: done, dueDate: dueDate, title: title)
+        self.delegate?.save(todoBase)
+    }
+
     @objc func deleteTodo() {
         self.delegate?.delete()
+    }
+
+    @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
+        // Enable save button only if title is set
+        if self.titleTextField.text == nil || self.titleTextField.text == "" {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
     }
 
     @IBAction func datePickerDidChange(_ sender: UIDatePicker) {
