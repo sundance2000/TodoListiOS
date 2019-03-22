@@ -16,6 +16,8 @@ class Todo: NSManagedObject {
     @NSManaged var desc: String?
     @NSManaged var done: Bool
     @NSManaged var dueDate: Date
+    // Day without daytime to generate sections
+    @NSManaged var dueDay: Date
     @NSManaged var title: String
 
     var todoBase: TodoBase {
@@ -47,6 +49,7 @@ class Todo: NSManagedObject {
             todo.desc = todoFull.desc
             todo.done = done
             todo.dueDate = dueDate
+            todo.dueDay = dueDate.dayString.dayDate ?? dueDate
             todo.title = title
         }, completion: { _ in })
     }
@@ -64,6 +67,7 @@ class Todo: NSManagedObject {
                 todo.id = id
                 todo.done = done
                 todo.dueDate = dueDate
+                todo.dueDay = dueDate.dayString.dayDate ?? dueDate
                 todo.title = title
                 // Remove id from set
                 oldIds.remove(id)
@@ -96,6 +100,7 @@ class Todo: NSManagedObject {
             todo.desc = todoFull.desc
             todo.done = done
             todo.dueDate = dueDate
+            todo.dueDay = dueDate.dayString.dayDate ?? dueDate
             todo.title = title
         }, completion: { _ in
             if let todo = Database.dataStack.fetchOne(From<Todo>().where(\.id == id)) {

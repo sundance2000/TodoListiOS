@@ -20,8 +20,9 @@ protocol TodosTableViewControllerDelegate: class {
 
 class TodosTableViewController: UITableViewController {
 
-    let monitor = Database.dataStack.monitorList(From<Todo>()
-        .orderBy(.ascending("dueDate"), .ascending("title"), .ascending("id"))
+    let monitor = Database.dataStack.monitorSectionedList(From<Todo>()
+        .sectionBy(\.dueDay)
+        .orderBy(.ascending("dueDay"), .ascending("title"), .ascending("id"))
         .tweak { $0.fetchBatchSize = 20 }
     )
 
@@ -55,11 +56,11 @@ class TodosTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.monitor.numberOfSections()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.monitor.numberOfObjects()
+        return self.monitor.numberOfObjectsInSection(section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,6 +69,20 @@ class TodosTableViewController: UITableViewController {
         let todo = self.monitor[(indexPath as NSIndexPath).row]
         cell.set(todo)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let todo = self.monitor[IndexPath(item: 0, section: section)]
+        let date = todo.dueDate
+        if Calendar.current.isDateInYesterday(date) {
+            return Texts.yesterday
+        } else if Calendar.current.isDateInToday(date) {
+            return Texts.today
+        } else if Calendar.current.isDateInTomorrow(date) {
+            return Texts.tomorrow
+        } else {
+            return date.dayString
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -136,6 +151,20 @@ extension TodosTableViewController: ListObjectObserver {
     func listMonitor(_ monitor: ListMonitor<Todo>, didMoveObject object: Todo, fromIndexPath: IndexPath, toIndexPath: IndexPath) {
         self.tableView.deleteRows(at: [fromIndexPath], with: .automatic)
         self.tableView.insertRows(at: [toIndexPath], with: .automatic)
+    }
+
+}
+
+// MARK: - ListSectionObserver
+
+extension TodosTableViewController: ListSectionObserver {
+
+    func listMonitor(_ monitor: ListMonitor<Todo>, didInsertSection sectionInfo: NSFetchedResultsSectionInfo, toSectionIndex sectionIndex: Int) {
+        self.tableView.insertSections([sectionIndex], with: .automatic)
+    }
+
+    func listMonitor(_ monitor: ListMonitor<Todo>, didDeleteSection sectionInfo: NSFetchedResultsSectionInfo, fromSectionIndex sectionIndex: Int) {
+        self.tableView.deleteSections([sectionIndex], with: .automatic)
     }
 
 }

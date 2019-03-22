@@ -10,6 +10,12 @@ import Foundation
 
 public extension Date {
 
+    static fileprivate var dayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d. M. yyyy"
+        return formatter
+    }()
+
     static fileprivate var rfc3339dateFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions.insert(.withFractionalSeconds)
@@ -22,6 +28,10 @@ public extension Date {
         formatter.dateStyle = .medium
         return formatter
     }()
+
+    var dayString: String {
+        return Date.dayFormatter.string(from: self)
+    }
 
     public var rfc3339String: String {
         return Date.rfc3339dateFormatter.string(from: self)

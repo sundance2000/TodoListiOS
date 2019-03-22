@@ -10,6 +10,9 @@ class Texts {
 
     static let cancel = "Cancel".localized
     static let ok = "OK".localized
+    static let today = "Today".localized
+    static let tomorrow = "Tomorrow".localized
+    static let yesterday = "Yesterday".localized
 
     // MARK: - View Controllers
 
@@ -25,7 +28,7 @@ class Texts {
         static let plusOneWeek = "+1 week".localized
         static let plusOneYear = "+1 year".localized
         static let titleTextFieldPlaceholder = "Title".localized
-        static let today = "Today".localized
+        static let today = Texts.today
     }
 
 }

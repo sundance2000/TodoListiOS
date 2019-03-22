@@ -11,6 +11,12 @@ import QLog
 
 public extension String {
 
+    static fileprivate var dayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d. M. yyyy"
+        return formatter
+    }()
+
     static fileprivate var rfc3339dateFormatterWithFractionalSeconds: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions.insert(.withFractionalSeconds)
@@ -22,11 +28,19 @@ public extension String {
         return formatter
     }()
 
-    public var localized: String {
+    var localized: String {
         return NSLocalizedString(self, comment: "")
     }
 
-    public var rfc3339date: Date? {
+    var dayDate: Date? {
+        guard let date = String.dayFormatter.date(from: self) else {
+            QLogError("Cannot parse date: \(self)")
+            return nil
+        }
+        return date
+    }
+
+    var rfc3339date: Date? {
         var date: Date?
         date = String.rfc3339dateFormatterWithFractionalSeconds.date(from: self)
         if date == nil {
