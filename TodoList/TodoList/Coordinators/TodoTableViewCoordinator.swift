@@ -44,16 +44,12 @@ class TodoTableViewCoordinator: Coordinator {
 extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
 
     func abort() {
-
     }
 
     func back() {
-
     }
 
     func save() {
-        
     }
-
 
 }

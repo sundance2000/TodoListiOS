@@ -19,7 +19,7 @@ protocol TodosTableViewControllerDelegate: class {
 class TodosTableViewController: UITableViewController {
 
     let monitor = Database.dataStack.monitorList(From<Todo>()
-        .orderBy(.ascending("dueDate"), .ascending("title"))
+        .orderBy(.ascending("dueDate"), .ascending("title"), .ascending("id"))
         .tweak { $0.fetchBatchSize = 20 }
     )
 

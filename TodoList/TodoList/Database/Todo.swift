@@ -56,11 +56,15 @@ class Todo: NSManagedObject {
         Database.edit(self, transaction: transaction, handler: handler)
     }
 
+    func edit(transaction: BaseDataTransaction? = nil, handler: @escaping (_ todo: Todo, _ transaction: BaseDataTransaction) -> Void, completion: @escaping () -> Void) {
+        Database.edit(self, transaction: transaction, handler: handler, completion: completion)
+    }
+
     func toggle() {
         let done = !self.done
         // Update data from server
         NetworkController.shared.get(id: self.id) { _, todoFull in
-            self.update(todoFull)
+            self.update(todoFull, completion: {})
         }
         // Toggle todo and update server
         self.edit { todo, _ in
@@ -70,8 +74,8 @@ class Todo: NSManagedObject {
         }
     }
 
-    func update(_ todoFull: TodoFull) {
-        self.edit { todo, _ in
+    func update(_ todoFull: TodoFull, completion: @escaping () -> Void) {
+        self.edit(handler: { todo, _ in
             guard let id = todoFull.id, let done = todoFull.done, let dueDate = todoFull.dueDate?.rfc3339date, let title = todoFull.title else {
                 return
             }
@@ -80,7 +84,9 @@ class Todo: NSManagedObject {
             todo.done = done
             todo.dueDate = dueDate
             todo.title = title
-        }
+        }, completion: {
+            completion()
+        })
     }
 
 }

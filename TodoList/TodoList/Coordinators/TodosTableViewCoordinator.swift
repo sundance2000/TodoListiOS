@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christian Oberdörfer. All rights reserved.
 //
 
+import CoreStore
 import UIKit
 
 /// Coordinates handling of todos table
@@ -39,10 +40,13 @@ class TodosTableViewCoordinator: Coordinator {
 extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
 
     func selectTodo(_ todo: Todo) {
+        let id = todo.id
         NetworkController.shared.get(id: todo.id) { _, todoFull in
-            todo.update(todoFull)
-            self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: todo)
-            self.todoTableViewCoordinator?.start()
+            todo.update(todoFull) {
+                let todo = Database.dataStack.fetchOne(From<Todo>().where(\.id == id))
+                self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: todo)
+                self.todoTableViewCoordinator?.start()
+            }
         }
     }
 

@@ -14,7 +14,7 @@ class NetworkController {
 
     private let jsonDecoder = JSONDecoder()
     private let jsonEncoder = JSONEncoder()
-    private let url = URL(string: "http://localhost:9080/todos/")!
+    private let url = URL(string: "https://todolist.christian-oberdoerfer.de/todos/")!
 
     static var shared = {
         return NetworkController()
