@@ -56,6 +56,19 @@ class TodoTableViewController: UITableViewController {
         self.loadData()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Is only called when back button is touched
+        if self.isMovingFromParent {
+            // Update from UI
+            self.todo?.desc = self.descriptionTextField.text
+            self.todo?.done = self.doneSwitch.isOn
+            self.todo?.dueDate = self.datePicker.date
+            self.todo?.title = self.titleTextField.text ?? ""
+            self.delegate?.back()
+        }
+    }
+
     func loadData() {
         // If a todo is already provided, load its data
         if let todo = self.todo {

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christian Oberdörfer. All rights reserved.
 //
 
+import QLog
 import UIKit
 
 /// Coordinates handling of todos table
@@ -47,6 +48,15 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
     }
 
     func back() {
+        guard let todoFull = self.todo?.todoFull else {
+            QLogError("Todo is nil")
+            return
+        }
+        // Update database
+        self.todo?.update(todoFull) { todo  in
+            // Update to server
+            NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+        }
     }
 
     func save() {

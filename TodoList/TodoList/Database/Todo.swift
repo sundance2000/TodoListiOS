@@ -21,6 +21,10 @@ class Todo: NSManagedObject {
         return TodoBase(desc: self.desc, done: self.done, dueDate: self.dueDate.rfc3339String, title: self.title)
     }
 
+    var todoFull: TodoFull {
+        return TodoFull(id: self.id, desc: self.desc, done: self.done, dueDate: self.dueDate.rfc3339String, title: self.title)
+    }
+
     static func delete(_ ids: Set<Int32>) {
         Database.dataStack.perform(asynchronous: { transaction in
             for id in ids {
