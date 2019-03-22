@@ -8,6 +8,7 @@
 
 import CoreStore
 import Foundation
+import QLog
 
 class Todo: NSManagedObject {
 
@@ -41,6 +42,7 @@ class Todo: NSManagedObject {
             var oldIds = Set((transaction.fetchAll(From<Todo>()) ?? []).map { $0.id })
             for todoList in todoListList {
                 guard let id = todoList.id, let done = todoList.done, let dueDate = todoList.dueDate?.rfc3339date, let title = todoList.title else {
+                    QLogError("todo is incomplete: \(todoList)")
                     continue
                 }
                 let todo = transaction.fetchOne(From<Todo>().where(\.id == id)) ?? transaction.create(Into<Todo>())

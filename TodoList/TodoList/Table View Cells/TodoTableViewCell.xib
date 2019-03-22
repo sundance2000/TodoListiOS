@@ -32,31 +32,33 @@
                             <action selector="toggleDoneSwitch:" destination="KGk-i7-Jjw" eventType="touchDown" id="58w-Oz-40H"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-7A-gpo" customClass="QButton" customModule="TodoList" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-Mf-za1" customClass="QLabel" customModule="TodoList" customModuleProvider="target">
                         <rect key="frame" x="43.5" y="0.0" width="276.5" height="43.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="color" value="lightblue"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="lightblue"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="17"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="selectTodo:" destination="KGk-i7-Jjw" eventType="touchDown" id="sEg-eX-w3p"/>
-                        </connections>
-                    </view>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="QMs-Mf-za1" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="0oT-84-uBx"/>
                     <constraint firstItem="qIs-iZ-kBJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DeY-Jf-SuF"/>
                     <constraint firstItem="qIs-iZ-kBJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IXI-TB-7SP"/>
-                    <constraint firstItem="yMN-7A-gpo" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="UQj-vY-Kgp"/>
-                    <constraint firstItem="yMN-7A-gpo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XDq-b3-dEa"/>
-                    <constraint firstItem="yMN-7A-gpo" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="kH4-kS-KLW"/>
+                    <constraint firstItem="QMs-Mf-za1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YMc-73-y95"/>
+                    <constraint firstItem="qIs-iZ-kBJ" firstAttribute="trailing" secondItem="QMs-Mf-za1" secondAttribute="leading" id="iql-4v-Af5"/>
+                    <constraint firstItem="QMs-Mf-za1" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="npE-1Y-KM1"/>
                     <constraint firstItem="qIs-iZ-kBJ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="pjT-JB-Rad"/>
-                    <constraint firstItem="qIs-iZ-kBJ" firstAttribute="trailing" secondItem="yMN-7A-gpo" secondAttribute="leading" id="xnI-zL-red"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="doneSwitch" destination="qIs-iZ-kBJ" id="isR-Ly-3y1"/>
-                <outlet property="titleButton" destination="yMN-7A-gpo" id="qYr-3P-ORg"/>
+                <outlet property="titleLabel" destination="QMs-Mf-za1" id="kXX-ZM-0an"/>
             </connections>
         </tableViewCell>
     </objects>

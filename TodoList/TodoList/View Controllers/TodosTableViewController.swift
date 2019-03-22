@@ -67,6 +67,11 @@ class TodosTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let todo = self.monitor[(indexPath as NSIndexPath).row]
+        self.delegate?.select(todo)
+    }
+
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
@@ -131,10 +136,6 @@ extension TodosTableViewController: ListObjectObserver {
 // MARK: - TodosTableViewControllerDelegate
 
 extension TodosTableViewController: TodoTableViewCellDelegate {
-
-    func select(_ todo: Todo) {
-        self.delegate?.select(todo)
-    }
 
     func toggle(_ todo: Todo) {
         self.delegate?.toggle(todo)

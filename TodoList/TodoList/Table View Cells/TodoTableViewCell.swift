@@ -10,7 +10,6 @@ import UIKit
 
 protocol TodoTableViewCellDelegate: class {
 
-    func select(_ todo: Todo)
     func toggle(_ todo: Todo)
 
 }
@@ -18,7 +17,7 @@ protocol TodoTableViewCellDelegate: class {
 class TodoTableViewCell: QTableViewCell {
 
     @IBOutlet weak var doneSwitch: QSwitch!
-    @IBOutlet weak var titleButton: QButton!
+    @IBOutlet weak var titleLabel: QLabel!
 
     weak var delegate: TodoTableViewCellDelegate?
 
@@ -27,7 +26,7 @@ class TodoTableViewCell: QTableViewCell {
     func set(_ todo: Todo) {
         self.todo = todo
         self.doneSwitch.on = todo.done
-        self.titleButton.label.text = todo.title
+        self.titleLabel.text = todo.title
     }
 
     // MARK: - Navigation
@@ -36,10 +35,6 @@ class TodoTableViewCell: QTableViewCell {
         // Update UI
         self.doneSwitch.on = !self.doneSwitch.on
         self.delegate?.toggle(todo)
-    }
-
-    @IBAction func selectTodo(_ sender: Any) {
-        self.delegate?.select(todo)
     }
 
 }

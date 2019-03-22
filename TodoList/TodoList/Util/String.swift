@@ -7,12 +7,18 @@
 //
 
 import Foundation
+import QLog
 
 public extension String {
 
-    static fileprivate var rfc3339dateFormatter: ISO8601DateFormatter = {
+    static fileprivate var rfc3339dateFormatterWithFractionalSeconds: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions.insert(.withFractionalSeconds)
+        return formatter
+    }()
+
+    static fileprivate var rfc3339dateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
         return formatter
     }()
 
@@ -21,7 +27,17 @@ public extension String {
     }
 
     public var rfc3339date: Date? {
-        return String.rfc3339dateFormatter.date(from: self)
+        var date: Date?
+        date = String.rfc3339dateFormatterWithFractionalSeconds.date(from: self)
+        if date == nil {
+            // Retry without fractional seconds
+            date = String.rfc3339dateFormatter.date(from: self)
+        }
+        guard date != nil else {
+            QLogError("Cannot parse date: \(self)")
+            return nil
+        }
+        return date
     }
 
 }

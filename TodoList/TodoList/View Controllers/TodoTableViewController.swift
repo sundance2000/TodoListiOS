@@ -45,7 +45,7 @@ class TodoTableViewController: UITableViewController {
         // Localization
         self.title = Texts.TodoTableViewController.title
         self.titleTextField.placeholder = Texts.TodoTableViewController.titleTextFieldPlaceholder
-        self.datePickerButtonDelete.setTitle(Texts.TodoTableViewController.delete, for: .normal)
+        self.datePickerButtonDelete.setTitle("", for: .normal)
         self.datePickerButtonToday.setTitle(Texts.TodoTableViewController.today, for: .normal)
         self.datePickerButtonPlusOneDay.setTitle(Texts.TodoTableViewController.plusOneDay, for: .normal)
         self.datePickerButtonPlusOneWeek.setTitle(Texts.TodoTableViewController.plusOneWeek, for: .normal)
@@ -53,6 +53,7 @@ class TodoTableViewController: UITableViewController {
         self.datePickerButtonPlusOneYear.setTitle(Texts.TodoTableViewController.plusOneYear, for: .normal)
         self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
         self.doneTitleLabel.text = Texts.TodoTableViewController.done
+        self.deleteButton.title = Texts.TodoTableViewController.delete
         self.hideDatePicker()
         self.loadData()
     }
