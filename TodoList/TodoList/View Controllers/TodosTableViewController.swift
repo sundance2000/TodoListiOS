@@ -66,7 +66,7 @@ class TodosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as! TodoTableViewCell
         cell.delegate = self
-        let todo = self.monitor[(indexPath as NSIndexPath).row]
+        let todo = self.monitor[indexPath]
         cell.set(todo)
         return cell
     }
@@ -86,7 +86,7 @@ class TodosTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let todo = self.monitor[(indexPath as NSIndexPath).row]
+        let todo = self.monitor[indexPath]
         self.delegate?.select(todo)
     }
 
@@ -96,7 +96,7 @@ class TodosTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let todo = self.monitor[(indexPath as NSIndexPath).row]
+            let todo = self.monitor[indexPath]
             self.delegate?.delete(todo)
         }
     }
