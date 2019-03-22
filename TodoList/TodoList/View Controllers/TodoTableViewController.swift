@@ -52,7 +52,6 @@ class TodoTableViewController: UITableViewController {
         self.datePickerButtonPlusOneYear.setTitle(Texts.TodoTableViewController.plusOneYear, for: .normal)
         self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
         self.doneTitleLabel.text = Texts.TodoTableViewController.done
-        self.deleteButton.title = Texts.TodoTableViewController.delete
         self.hideDatePicker()
         self.loadData()
     }
@@ -118,7 +117,7 @@ class TodoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == TodoTableViewController.datePickerIndexPath && !self.datePicker.isHidden {
-            return CGFloat(347)
+            return CGFloat(330)
         }
         return CGFloat(50)
     }
@@ -134,7 +133,6 @@ class TodoTableViewController: UITableViewController {
     }
 
     @IBAction func dateDelete(_ sender: UIButton) {
-        self.dueDateLabel.text = nil
     }
 
     @IBAction func dateToday(_ sender: UIButton) {

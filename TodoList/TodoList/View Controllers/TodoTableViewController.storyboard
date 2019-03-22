@@ -46,27 +46,27 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Due date" id="iRR-BX-tpg">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="347" id="Nr8-Io-70d">
-                                        <rect key="frame" x="0.0" y="161.33333333333337" width="414" height="347"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="330" id="Nr8-Io-70d">
+                                        <rect key="frame" x="0.0" y="161.33333333333337" width="414" height="330"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nr8-Io-70d" id="d5M-cb-U5z">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="346.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="329.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OLg-Iv-FYh">
-                                                    <rect key="frame" x="20" y="11" width="374" height="325"/>
+                                                    <rect key="frame" x="20" y="13" width="374" height="308"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AE-7p-zxH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="tom-ji-BLY"/>
+                                                                <constraint firstAttribute="height" constant="28" id="Agq-ke-TfI"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-sU-NEZ">
-                                                            <rect key="frame" x="0.0" y="50" width="374" height="180"/>
+                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-sU-NEZ">
+                                                            <rect key="frame" x="0.0" y="28" width="374" height="180"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="180" id="imf-hg-SvH"/>
                                                             </constraints>
@@ -78,19 +78,18 @@
                                                             </connections>
                                                         </datePicker>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-TQ-4h0">
-                                                            <rect key="frame" x="0.0" y="230" width="374" height="50"/>
+                                                            <rect key="frame" x="0.0" y="208" width="374" height="50"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3l-Xm-IRY" customClass="FormButton" customModule="TodoList" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3l-Xm-IRY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="G7b-sm-lW0"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="Delete"/>
                                                                     <connections>
                                                                         <action selector="dateDelete:" destination="FvT-j3-Ds1" eventType="touchUpInside" id="HIn-qb-gZI"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-s4-KjT" customClass="FormButton" customModule="TodoList" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-s4-KjT">
                                                                     <rect key="frame" x="124.66666666666666" y="0.0" width="124.66666666666666" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="f0e-0p-tnc"/>
@@ -100,7 +99,7 @@
                                                                         <action selector="dateToday:" destination="FvT-j3-Ds1" eventType="touchUpInside" id="0yk-M7-qas"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kU-8g-gb9" customClass="FormButton" customModule="TodoList" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kU-8g-gb9">
                                                                     <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666666" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="fHZ-XQ-8Ck"/>
@@ -117,10 +116,10 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziv-iA-dz4">
-                                                            <rect key="frame" x="0.0" y="280" width="374" height="45"/>
+                                                            <rect key="frame" x="0.0" y="258" width="374" height="50"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ6-g4-QzY" customClass="FormButton" customModule="TodoList" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="45"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ6-g4-QzY">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="SpD-fz-YjB"/>
                                                                     </constraints>
@@ -129,8 +128,8 @@
                                                                         <action selector="datePlusOneWeek:" destination="FvT-j3-Ds1" eventType="touchUpInside" id="XXF-ND-cFF"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-ye-zNp" customClass="FormButton" customModule="TodoList" customModuleProvider="target">
-                                                                    <rect key="frame" x="124.66666666666666" y="0.0" width="124.66666666666666" height="45"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-ye-zNp">
+                                                                    <rect key="frame" x="124.66666666666666" y="0.0" width="124.66666666666666" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="7ZP-kx-ZOV"/>
                                                                     </constraints>
@@ -139,8 +138,8 @@
                                                                         <action selector="datePlusOneMonth:" destination="FvT-j3-Ds1" eventType="touchUpInside" id="RiY-md-qtU"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPp-Ak-2Z5" customClass="FormButton" customModule="TodoList" customModuleProvider="target">
-                                                                    <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666666" height="45"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPp-Ak-2Z5">
+                                                                    <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666666" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="gVZ-s4-jav"/>
                                                                     </constraints>
@@ -157,13 +156,13 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="3AE-7p-zxH" firstAttribute="top" secondItem="OLg-Iv-FYh" secondAttribute="topMargin" id="lhx-4g-Lis"/>
                                                         <constraint firstAttribute="bottom" secondItem="ziv-iA-dz4" secondAttribute="bottom" id="n1X-zE-IUJ"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OLg-Iv-FYh" firstAttribute="bottom" secondItem="d5M-cb-U5z" secondAttribute="bottomMargin" id="CF6-cF-BVs"/>
-                                                <constraint firstItem="OLg-Iv-FYh" firstAttribute="top" secondItem="d5M-cb-U5z" secondAttribute="topMargin" id="FyT-k8-yLS"/>
+                                                <constraint firstItem="OLg-Iv-FYh" firstAttribute="top" secondItem="d5M-cb-U5z" secondAttribute="topMargin" constant="2" id="FyT-k8-yLS"/>
                                                 <constraint firstItem="OLg-Iv-FYh" firstAttribute="leading" secondItem="d5M-cb-U5z" secondAttribute="leadingMargin" id="Lbb-Br-TWN"/>
                                                 <constraint firstItem="OLg-Iv-FYh" firstAttribute="trailing" secondItem="d5M-cb-U5z" secondAttribute="trailingMargin" id="zBG-TE-2xc"/>
                                             </constraints>
@@ -174,7 +173,7 @@
                             <tableViewSection headerTitle="Description" id="dv2-1i-fxT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uDf-mv-VkO">
-                                        <rect key="frame" x="0.0" y="564.33333333333337" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="547.33333333333337" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uDf-mv-VkO" id="fx5-Jy-zxi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
@@ -200,7 +199,7 @@
                             <tableViewSection id="D1v-AZ-ry3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bub-o3-Ctp">
-                                        <rect key="frame" x="0.0" y="650.33333333333337" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="633.33333333333337" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bub-o3-Ctp" id="vWp-hE-pu2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
@@ -275,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dcA-k5-HPF" customClass="DestructiveToolBar" customModule="PowerFolder">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dcA-k5-HPF">
                         <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
