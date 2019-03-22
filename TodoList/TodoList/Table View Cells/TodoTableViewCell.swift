@@ -41,5 +41,5 @@ class TodoTableViewCell: QTableViewCell {
     @IBAction func selectTodo(_ sender: Any) {
         self.delegate?.selectTodo(todo)
     }
-    
+
 }

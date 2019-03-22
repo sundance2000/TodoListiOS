@@ -1,5 +1,5 @@
 //
-//  Texts
+//  Texts.swift
 //  TodoList
 //
 //  Created by Christian Oberdörfer on 20.03.19.

@@ -11,7 +11,6 @@ import UIKit
 @IBDesignable public class QButton: UIButton {
 
     @IBInspectable var fontSize: CGFloat = 13.0
-    @IBInspectable var textAlignment: NSTextAlignment = .left
 
     @IBInspectable var color: String {
         get {
@@ -57,7 +56,7 @@ import UIKit
     }
 
     func setLabel() {
-        self.label.textAlignment = self.textAlignment
+        self.label.textAlignment = .left
         self.label.font = UIFont.boldSystemFont(ofSize: self.fontSize)
         self.label.textColor = UIColor.white
         self.label.frame = CGRect(x: self.bounds.minX + 15, y: self.bounds.minY + 15, width: self.bounds.width - 30, height: self.bounds.height - 30)

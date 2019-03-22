@@ -11,14 +11,22 @@ import UIKit
 
 // Genius solution from http://qualitycoding.org/app-delegate-for-tests/
 let appDelegateClass: AnyClass? = NSClassFromString("TodoListTests.TestAppDelegate") ?? AppDelegate.self
-let args = UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
-_ = UIApplicationMain(CommandLine.argc, args, nil, NSStringFromClass(appDelegateClass!))
+_ = UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass!))
 
-func main() {
+private func setAppearance() {
     // Set global colors
     UIView.appearance().tintColor = QColor.blue.color
     UIView.appearance(whenContainedInInstancesOf: [QTableViewCell.self]).tintColor = UIColor.white
-    // QLog settings
+    // Remove shadow from bars
+    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    UINavigationBar.appearance().shadowImage = UIImage()
+    UINavigationBar.appearance().isTranslucent = false
+    UITabBar.appearance().shadowImage = UIImage()
+    UITabBar.appearance().backgroundImage = UIImage()
+    UITabBar.appearance().backgroundColor = UIColor.white
+}
+
+private func setQlog() {
     QLog.Texts.archive = "Archive".localized
     QLog.Texts.live = "Live".localized
     QLog.Texts.supportPackage = "Support Package".localized
@@ -28,14 +36,9 @@ func main() {
     QLog.colorInfo = QColor.green.color
     QLog.colorWarning = QColor.yellow.color
     QLog.colorError = QColor.red.color
-    // Fonts of navigation bars cannot be changed with UIFont extension, so we do it with the appearance proxy here
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)]
-    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
-    // Remove shadow from bars
-    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-    UINavigationBar.appearance().shadowImage = UIImage()
-    UINavigationBar.appearance().isTranslucent = false
-    UITabBar.appearance().shadowImage = UIImage()
-    UITabBar.appearance().backgroundImage = UIImage()
-    UITabBar.appearance().backgroundColor = UIColor.white
+}
+
+func main() {
+    setAppearance()
+    setQlog()
 }

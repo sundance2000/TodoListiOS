@@ -31,11 +31,14 @@ class NetworkController {
         request.httpBody = try? self.jsonEncoder.encode(todoBase)
         Alamofire.request(request).responseJSON { response in
             guard let statusCode = response.response?.statusCode, let data = response.data else {
+                QLogError("Cannot get data from response \(response)")
                 return
             }
             guard let todoFull = try? self.jsonDecoder.decode(TodoFull.self, from: data) else {
+                QLogError("Cannot parse JSON data \(data)")
                 return
             }
+            QLogDebug("POST(todoBase: \(todoBase)): Received status code: \(statusCode)")
             actionHandler(statusCode, todoFull)
         }
     }
@@ -46,8 +49,10 @@ class NetworkController {
         request.setValue("application/json;", forHTTPHeaderField: "Accept")
         Alamofire.request(request).responseJSON { response in
             guard let statusCode = response.response?.statusCode else {
+                QLogError("Cannot get data from response \(response)")
                 return
             }
+            QLogDebug("DELETE(id: \(id)): Received status code: \(statusCode)")
             actionHandler(statusCode)
         }
     }
@@ -58,12 +63,14 @@ class NetworkController {
         request.setValue("application/json;", forHTTPHeaderField: "Accept")
         Alamofire.request(request).responseJSON { response in
             guard let statusCode = response.response?.statusCode, let data = response.data else {
+                QLogError("Cannot get data from response \(response)")
                 return
             }
-            QLogDebug("GET(\(id)): \(statusCode):\(String(describing: String(data: data, encoding: .utf8)))")
             guard let todoFull = try? self.jsonDecoder.decode(TodoFull.self, from: data) else {
+                QLogError("Cannot parse JSON data \(data)")
                 return
             }
+            QLogDebug("GET(id: \(id)): Received(status code: \(statusCode)): \(todoFull)")
             actionHandler(statusCode, todoFull)
         }
     }
@@ -71,9 +78,11 @@ class NetworkController {
     func list(state: String = "unfinished", limit: Int = 5, offset: Int = 0, actionHandler: @escaping (_ statusCode: Int, _ todoList: [TodoList]) -> Void) {
         Alamofire.request(self.url.absoluteString, method: .get, parameters: ["state": state, "limit": limit, "offset": offset], headers: ["Accept": "application/json"]).responseJSON { response in
             guard let statusCode = response.response?.statusCode, let data = response.data else {
+                QLogError("Cannot get data from response \(response)")
                 return
             }
             let todoList = (try? self.jsonDecoder.decode([TodoList].self, from: data)) ?? []
+            QLogDebug("GET(state: \(state) limit: \(limit) offset: \(offset): Received(status code: \(statusCode)): \(todoList)")
             actionHandler(statusCode, todoList)
         }
     }
@@ -86,9 +95,10 @@ class NetworkController {
         request.httpBody = try? self.jsonEncoder.encode(todoBase)
         Alamofire.request(request).responseJSON { response in
             guard let statusCode = response.response?.statusCode else {
+                QLogError("Cannot get data from response \(response)")
                 return
             }
-            QLogDebug("UPDATE(\(id):\(todoBase)): \(statusCode)")
+            QLogDebug("UPDATE(id: \(id) todoBase: \(todoBase)): Received status code: \(statusCode)")
             actionHandler(statusCode)
         }
     }
