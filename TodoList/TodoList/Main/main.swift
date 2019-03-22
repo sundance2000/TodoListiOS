@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christian Oberdörfer. All rights reserved.
 //
 
+import GameIcons
 import QLog
 import UIKit
 
@@ -27,9 +28,12 @@ private func setAppearance() {
 }
 
 private func setQlog() {
-    QLog.Texts.archive = "Archive".localized
-    QLog.Texts.live = "Live".localized
-    QLog.Texts.supportPackage = "Support Package".localized
+    QLog.Images.archive = GameIcon.openfolder.tabBarImage
+    QLog.Images.live = GameIcon.histogram.tabBarImage
+    QLog.Images.supportPackage = GameIcon.cardboardbox.tabBarImage
+    QLog.Texts.archive = Texts.archive
+    QLog.Texts.live = Texts.live
+    QLog.Texts.supportPackage = Texts.supportPackage
     QLog.loggers = [XcodeLogger(), FileLogger(), UiLogger.shared]
     QLog.colorHighlight = QColor.purple.color
     QLog.colorDebug = QColor.blue.color

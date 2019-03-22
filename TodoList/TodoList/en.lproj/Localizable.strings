@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  TodoList
+
+  Created by Christian Oberdörfer on 22.03.19.
+  Copyright © 2019 Christian Oberdörfer. All rights reserved.
+*/
+
+"+1 day" = "+1 day";
+"+1 month" = "+1 month";
+"+1 week" = "+1 week";
+"+1 year" = "+1 year";
+"Archive" = "Archive";
+"Cancel" = "Cancel";
+"Delete" = "Delete";
+"Description" = "Description";
+"Done" = "Done";
+"Due date" = "Due date";
+"Live" = "Live";
+"OK" = "OK";
+"Support Package" = "Support Package";
+"Title" = "Title";
+"Today" = "Today";
+"Tomorrow" = "Tomorrow";
+"Yesterday" = "Yesterday";

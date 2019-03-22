@@ -57,6 +57,7 @@
 		9F93565922403D960092009A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F93564B22403D8B0092009A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FB81E5722453502002BF3F1 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81E5622453502002BF3F1 /* DateTests.swift */; };
 		9FB81E5922453A40002BF3F1 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81E5822453A40002BF3F1 /* StringTests.swift */; };
+		9FB81EAC22456FBD002BF3F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81EAE22456FBD002BF3F1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +313,8 @@
 		9F93563F22403D8A0092009A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		9FB81E5622453502002BF3F1 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		9FB81E5822453A40002BF3F1 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		9FB81EAD22456FBD002BF3F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9FB81EAF22456FD6002BF3F1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +408,7 @@
 				9F791A2022404430003DA51B /* Util */,
 				9F3FF27622401BB90096E7C2 /* Assets.xcassets */,
 				9F3FF27822401BB90096E7C2 /* LaunchScreen.storyboard */,
+				9FB81EAE22456FBD002BF3F1 /* Localizable.strings */,
 				9F3FF27B22401BB90096E7C2 /* Info.plist */,
 				9F3FF27322401BB70096E7C2 /* TodoList.xcdatamodeld */,
 				9F3FF29D22401CD30096E7C2 /* .swiftlint.yml */,
@@ -691,6 +695,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 9F3FF26022401BB70096E7C2;
 			productRefGroup = 9F3FF26A22401BB70096E7C2 /* Products */;
@@ -863,6 +868,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB81EAC22456FBD002BF3F1 /* Localizable.strings in Resources */,
 				9F3FF27A22401BB90096E7C2 /* LaunchScreen.storyboard in Resources */,
 				9F3FF27722401BB90096E7C2 /* Assets.xcassets in Resources */,
 				9F7602042242D6C800DA7FC9 /* TodoTableViewController.storyboard in Resources */,
@@ -1040,6 +1046,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		9FB81EAE22456FBD002BF3F1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FB81EAD22456FBD002BF3F1 /* en */,
+				9FB81EAF22456FD6002BF3F1 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1047,6 +1062,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1108,6 +1124,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

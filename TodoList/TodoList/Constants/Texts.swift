@@ -8,8 +8,11 @@
 
 class Texts {
 
+    static let archive = "Archive".localized
     static let cancel = "Cancel".localized
+    static let live = "Live".localized
     static let ok = "OK".localized
+    static let supportPackage = "Support Package".localized
     static let today = "Today".localized
     static let tomorrow = "Tomorrow".localized
     static let yesterday = "Yesterday".localized
@@ -20,7 +23,7 @@ class Texts {
         static let title = "Title".localized
         static let delete = "Delete".localized
         static let description = "Description".localized
-        static let descriptionTextFieldPlaceholder = "Description".localized
+        static let descriptionTextFieldPlaceholder = Texts.TodoTableViewController.description
         static let done = "Done".localized
         static let dueDate = "Due date".localized
         static let plusOneDay = "+1 day".localized
