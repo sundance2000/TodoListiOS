@@ -32,6 +32,13 @@ class Texts {
         static let plusOneYear = "+1 year".localized
         static let titleTextFieldPlaceholder = "Title".localized
         static let today = Texts.today
+        static let viewControllerTitle = "Todo".localized
+    }
+
+    class SettingsTableViewController {
+        static let generateSupportPackage = "Generate support package".localized
+        static let serverAddress = "Server address".localized
+        static let viewControllerTitle = "Settings".localized
     }
 
 }

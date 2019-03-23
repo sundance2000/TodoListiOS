@@ -43,7 +43,7 @@ class TodoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Localization
-        self.title = Texts.TodoTableViewController.title
+        self.title = Texts.TodoTableViewController.viewControllerTitle
         self.titleTextField.placeholder = Texts.TodoTableViewController.titleTextFieldPlaceholder
         self.datePickerButtonDelete.setTitle("", for: .normal)
         self.datePickerButtonToday.setTitle(Texts.TodoTableViewController.today, for: .normal)

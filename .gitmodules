@@ -10,3 +10,6 @@
 [submodule "GameIcons"]
 	path = GameIcons
 	url = https://github.com/QuantumApplications/GameIcons.git
+[submodule "Frameworks/SwiftyUserDefaults"]
+	path = Frameworks/SwiftyUserDefaults
+	url = https://github.com/radex/SwiftyUserDefaults.git

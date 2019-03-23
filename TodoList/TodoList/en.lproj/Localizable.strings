@@ -16,10 +16,14 @@
 "Description" = "Description";
 "Done" = "Done";
 "Due date" = "Due date";
+"Generate support package" = "Generate support package";
 "Live" = "Live";
 "OK" = "OK";
+"Settings" = "Settings";
+"Server address" = "Server address";
 "Support Package" = "Support Package";
 "Title" = "Title";
 "Today" = "Today";
+"Todo" = "Todo";
 "Tomorrow" = "Tomorrow";
 "Yesterday" = "Yesterday";

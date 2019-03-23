@@ -18,7 +18,7 @@ class TodoTableViewCoordinator: Coordinator {
     private var todo: Todo?
 
     /**
-     Creates a new apps table coordinator
+     Creates a new todo table coordinator
      - parameter navigationController: The navigation controller to use
      */
     init(navigationController: UINavigationController, todo: Todo? = nil) {

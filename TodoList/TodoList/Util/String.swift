@@ -28,6 +28,18 @@ public extension String {
         return formatter
     }()
 
+    var httpsUrl: URL? {
+        if self.lowercased().hasPrefix("https://") {
+            return URL(string: self)
+        } else if self.lowercased().hasPrefix("http://") {
+            var temp = self
+            temp.removeFirst(7)
+            return URL(string: "https://" + temp)
+        } else {
+            return URL(string: "https://" + self)
+        }
+    }
+
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }

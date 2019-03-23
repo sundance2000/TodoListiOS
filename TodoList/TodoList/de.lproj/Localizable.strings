@@ -16,10 +16,14 @@
 "Description" = "Beschreibung";
 "Done" = "Erledigt";
 "Due date" = "Fällig";
+"Generate support package" = "Supportpaket erstellen";
 "Live" = "Live";
 "OK" = "OK";
+"Settings" = "Einstellungen";
+"Server address" = "Serveradresse";
 "Support Package" = "Supportpaket";
 "Title" = "Titel";
 "Today" = "Heute";
+"Todo" = "Todo";
 "Tomorrow" = "Morgen";
 "Yesterday" = "Gestern";

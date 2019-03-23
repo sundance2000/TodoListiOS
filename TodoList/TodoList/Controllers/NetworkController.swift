@@ -9,18 +9,44 @@
 import Alamofire
 import Foundation
 import QLog
+import SwiftyUserDefaults
 
-class NetworkController {
+class NetworkController: Component {
 
     private let jsonDecoder = JSONDecoder()
     private let jsonEncoder = JSONEncoder()
-    private let url = URL(string: "https://todolist.christian-oberdoerfer.de/todos/")!
+
+    private var url = URL(string: "https://")!
 
     static var shared = {
         return NetworkController()
     }()
 
-    private init() {
+    override var description: String {
+        return Strings.ControllerNames.networkController
+    }
+
+    private override init() {
+    }
+
+    func start() {
+        super.start {
+            guard let url = URL(string: Defaults[.serverAddress])  else {
+                QLogError("Cannot parse server address: \(Defaults[.serverAddress])")
+                super.shutdown {}
+                return
+            }
+            self.url = url.appendingPathComponent("todos")
+            self.list(state: "all") { statusCode, todoList in
+                Todo.save(todoList)
+            }
+        }
+    }
+
+    func shutdown() {
+        super.shutdown {
+            self.url = URL(string: "https://")!
+        }
     }
 
     func create(todoBase: TodoBase, actionHandler: @escaping (_ statusCode: Int, _ todoFull: TodoFull) -> Void) {

@@ -58,6 +58,15 @@
 		9FB81E5722453502002BF3F1 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81E5622453502002BF3F1 /* DateTests.swift */; };
 		9FB81E5922453A40002BF3F1 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81E5822453A40002BF3F1 /* StringTests.swift */; };
 		9FB81EAC22456FBD002BF3F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81EAE22456FBD002BF3F1 /* Localizable.strings */; };
+		9FB81EB12245811A002BF3F1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EB022458119002BF3F1 /* Configuration.swift */; };
+		9FB81EB322458189002BF3F1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EB222458189002BF3F1 /* UserDefaults.swift */; };
+		9FB81ECF224582BE002BF3F1 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB81EBA22458280002BF3F1 /* SwiftyUserDefaults.framework */; };
+		9FB81ED0224582BE002BF3F1 /* SwiftyUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB81EBA22458280002BF3F1 /* SwiftyUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FB81ED422464813002BF3F1 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81ED322464813002BF3F1 /* Component.swift */; };
+		9FB81ED622464924002BF3F1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81ED522464924002BF3F1 /* Strings.swift */; };
+		9FB81ED822465245002BF3F1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81ED722465245002BF3F1 /* SettingsTableViewController.swift */; };
+		9FB81EDA22465275002BF3F1 /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81ED922465275002BF3F1 /* SettingsTableViewController.storyboard */; };
+		9FB81EDC22465611002BF3F1 /* SettingsTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EDB22465611002BF3F1 /* SettingsTableViewCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +245,27 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
+		9FB81EB922458280002BF3F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A9683391DA938C5FBDD29A7;
+			remoteInfo = SwiftyUserDefaults;
+		};
+		9FB81EBB22458280002BF3F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F067CFEA88F84E726E835422;
+			remoteInfo = SwiftyUserDefaultsTests;
+		};
+		9FB81ED1224582BF002BF3F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 61A78F3463F2610F6773A31E;
+			remoteInfo = SwiftyUserDefaults;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -249,6 +279,7 @@
 				9F791A182240425C003DA51B /* CoreStore.framework in Embed Frameworks */,
 				9F76F46C22426A9A00EE2E2E /* GameIcons.framework in Embed Frameworks */,
 				9F93565922403D960092009A /* Alamofire.framework in Embed Frameworks */,
+				9FB81ED0224582BE002BF3F1 /* SwiftyUserDefaults.framework in Embed Frameworks */,
 				9F76F47122426AA200EE2E2E /* Macaw.framework in Embed Frameworks */,
 				9F2A95ED2240318400E6F74F /* QLog.framework in Embed Frameworks */,
 			);
@@ -315,6 +346,14 @@
 		9FB81E5822453A40002BF3F1 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9FB81EAD22456FBD002BF3F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9FB81EAF22456FD6002BF3F1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9FB81EB022458119002BF3F1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		9FB81EB222458189002BF3F1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyUserDefaults.xcodeproj; path = ../Frameworks/SwiftyUserDefaults/SwiftyUserDefaults.xcodeproj; sourceTree = "<group>"; };
+		9FB81ED322464813002BF3F1 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		9FB81ED522464924002BF3F1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		9FB81ED722465245002BF3F1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		9FB81ED922465275002BF3F1 /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
+		9FB81EDB22465611002BF3F1 /* SettingsTableViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +365,7 @@
 				9F791A172240425C003DA51B /* CoreStore.framework in Frameworks */,
 				9F76F46B22426A9A00EE2E2E /* GameIcons.framework in Frameworks */,
 				9F93565822403D960092009A /* Alamofire.framework in Frameworks */,
+				9FB81ECF224582BE002BF3F1 /* SwiftyUserDefaults.framework in Frameworks */,
 				9F76F47022426AA200EE2E2E /* Macaw.framework in Frameworks */,
 				9F2A95EC2240318400E6F74F /* QLog.framework in Frameworks */,
 			);
@@ -355,6 +395,7 @@
 				9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */,
 				9F76F46122426A8900EE2E2E /* GameIcons.xcodeproj */,
 				9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */,
+				9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -486,9 +527,11 @@
 		9F791A1B224043A6003DA51B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				9F7602072242E32300DA7FC9 /* Texts.swift */,
 				9F791A1C224043BB003DA51B /* App.swift */,
+				9FB81EB022458119002BF3F1 /* Configuration.swift */,
 				9F791A1E224043F0003DA51B /* Database.swift */,
+				9FB81ED522464924002BF3F1 /* Strings.swift */,
+				9F7602072242E32300DA7FC9 /* Texts.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -499,6 +542,7 @@
 				9F7C37A22242879200A6CF66 /* Date.swift */,
 				9F76F4582242629B00EE2E2E /* QColor.swift */,
 				9F76F45A224262E500EE2E2E /* String.swift */,
+				9FB81EB222458189002BF3F1 /* UserDefaults.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -506,6 +550,7 @@
 		9F791A23224046A0003DA51B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9FB81ED322464813002BF3F1 /* Component.swift */,
 				9F791A24224046B8003DA51B /* NetworkController.swift */,
 			);
 			path = Controllers;
@@ -524,6 +569,8 @@
 		9F791A332241987B003DA51B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9FB81ED722465245002BF3F1 /* SettingsTableViewController.swift */,
+				9FB81ED922465275002BF3F1 /* SettingsTableViewController.storyboard */,
 				9F791A34224198F1003DA51B /* TodosTableViewController.swift */,
 				9F7601F12242D6B400DA7FC9 /* TodoTableViewController.swift */,
 				9F7602032242D6C800DA7FC9 /* TodoTableViewController.storyboard */,
@@ -550,6 +597,7 @@
 				9F93560E224037A90092009A /* AppCoordinator.swift */,
 				9F791A3B22419997003DA51B /* TodosTableViewCoordinator.swift */,
 				9F7602052242DA8000DA7FC9 /* TodoTableViewCoordinator.swift */,
+				9FB81EDB22465611002BF3F1 /* SettingsTableViewCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -601,6 +649,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		9FB81EB52245827F002BF3F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FB81EBA22458280002BF3F1 /* SwiftyUserDefaults.framework */,
+				9FB81EBC22458280002BF3F1 /* SwiftyUserDefaultsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -621,6 +678,7 @@
 				9F2A95EF2240318400E6F74F /* PBXTargetDependency */,
 				9F791A1A2240425C003DA51B /* PBXTargetDependency */,
 				9F76F46E22426A9A00EE2E2E /* PBXTargetDependency */,
+				9FB81ED2224582BF002BF3F1 /* PBXTargetDependency */,
 			);
 			name = TodoList;
 			productName = TodoList;
@@ -716,6 +774,10 @@
 				{
 					ProductGroup = 9F2A95DE2240313C00E6F74F /* Products */;
 					ProjectRef = 9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */;
+				},
+				{
+					ProductGroup = 9FB81EB52245827F002BF3F1 /* Products */;
+					ProjectRef = 9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -861,6 +923,20 @@
 			remoteRef = 9F93565622403D8B0092009A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9FB81EBA22458280002BF3F1 /* SwiftyUserDefaults.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyUserDefaults.framework;
+			remoteRef = 9FB81EB922458280002BF3F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FB81EBC22458280002BF3F1 /* SwiftyUserDefaultsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftyUserDefaultsTests.xctest;
+			remoteRef = 9FB81EBB22458280002BF3F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -869,6 +945,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB81EAC22456FBD002BF3F1 /* Localizable.strings in Resources */,
+				9FB81EDA22465275002BF3F1 /* SettingsTableViewController.storyboard in Resources */,
 				9F3FF27A22401BB90096E7C2 /* LaunchScreen.storyboard in Resources */,
 				9F3FF27722401BB90096E7C2 /* Assets.xcassets in Resources */,
 				9F7602042242D6C800DA7FC9 /* TodoTableViewController.storyboard in Resources */,
@@ -951,8 +1028,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB81EB322458189002BF3F1 /* UserDefaults.swift in Sources */,
 				9F791A25224046B8003DA51B /* NetworkController.swift in Sources */,
 				9F76F4462242620600EE2E2E /* QTableViewController.swift in Sources */,
+				9FB81EB12245811A002BF3F1 /* Configuration.swift in Sources */,
 				9F791A2E22418948003DA51B /* TodoList.swift in Sources */,
 				9F76F4602242664000EE2E2E /* QButton.swift in Sources */,
 				9F7919FE2240411D003DA51B /* Todo.swift in Sources */,
@@ -960,10 +1039,12 @@
 				9F791A2922417B26003DA51B /* TodoFull.swift in Sources */,
 				9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */,
 				9F3FF26D22401BB70096E7C2 /* AppDelegate.swift in Sources */,
+				9FB81ED622464924002BF3F1 /* Strings.swift in Sources */,
 				9F935611224037D20092009A /* Coordinator.swift in Sources */,
 				9F791A35224198F1003DA51B /* TodosTableViewController.swift in Sources */,
 				9F76F47322426D2900EE2E2E /* QSwitch.swift in Sources */,
 				9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */,
+				9FB81ED422464813002BF3F1 /* Component.swift in Sources */,
 				9F791A1D224043BB003DA51B /* App.swift in Sources */,
 				9F76F4572242625F00EE2E2E /* QTableViewCell.swift in Sources */,
 				9F791A3922419951003DA51B /* TodoTableViewCell.swift in Sources */,
@@ -972,9 +1053,11 @@
 				9F76F45E2242632C00EE2E2E /* QLabel.swift in Sources */,
 				9F791A2722417376003DA51B /* TodoBase.swift in Sources */,
 				9F3FF27522401BB70096E7C2 /* TodoList.xcdatamodeld in Sources */,
+				9FB81EDC22465611002BF3F1 /* SettingsTableViewCoordinator.swift in Sources */,
 				9F7602082242E32300DA7FC9 /* Texts.swift in Sources */,
 				9F76F45B224262E500EE2E2E /* String.swift in Sources */,
 				9F7602062242DA8000DA7FC9 /* TodoTableViewCoordinator.swift in Sources */,
+				9FB81ED822465245002BF3F1 /* SettingsTableViewController.swift in Sources */,
 				9F791A3C22419997003DA51B /* TodosTableViewCoordinator.swift in Sources */,
 				9F76F4592242629B00EE2E2E /* QColor.swift in Sources */,
 				9F7601F22242D6B400DA7FC9 /* TodoTableViewController.swift in Sources */,
@@ -1034,6 +1117,11 @@
 			isa = PBXTargetDependency;
 			name = "CoreStore iOS";
 			targetProxy = 9F791A192240425C003DA51B /* PBXContainerItemProxy */;
+		};
+		9FB81ED2224582BF002BF3F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyUserDefaults;
+			targetProxy = 9FB81ED1224582BF002BF3F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

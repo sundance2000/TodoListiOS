@@ -7,6 +7,7 @@
 //
 
 import CoreStore
+import GameIcons
 import UIKit
 
 protocol TodosTableViewControllerDelegate: class {
@@ -14,6 +15,7 @@ protocol TodosTableViewControllerDelegate: class {
     func add()
     func delete(_ todo: Todo)
     func select(_ todo: Todo)
+    func showSettings()
     func toggle(_ todo: Todo)
 
 }
@@ -46,6 +48,7 @@ class TodosTableViewController: UITableViewController {
         // Register table cell class from nib
         self.tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoTableViewCell")
         // Add bar buttons
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: GameIcon.cog.tabBarImage, style: .plain, target: self, action: #selector(showSettings))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
     }
 
@@ -105,6 +108,10 @@ class TodosTableViewController: UITableViewController {
 
     @objc func add() {
         self.delegate?.add()
+    }
+
+    @objc func showSettings() {
+        self.delegate?.showSettings()
     }
 
 }
