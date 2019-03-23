@@ -50,14 +50,21 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
 
     func back() {
         self.navigationController.setToolbarHidden(true, animated: true)
-        guard let todoFull = self.todo?.todoFull else {
+        guard let todo = self.todo else {
             QLogError("Todo is nil")
             return
         }
-        // Update database
-        self.todo?.update(todoFull) { todo  in
-            // Update to server
-            NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase) { _ in }
+        let id = todo.id
+        let desc = self.todoTableViewController.descriptionTextField.text
+        let done = self.todoTableViewController.doneSwitch.isOn
+        let dueDate = self.todoTableViewController.datePicker.date.rfc3339String
+        let title = self.todoTableViewController.titleTextField.text ?? ""
+        let todoBase = TodoBase(desc: desc, done: done, dueDate: dueDate, title: title)
+        let todoFull = TodoFull(id: id, desc: desc, done: done, dueDate: dueDate, title: title)
+        // Update to server
+        NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
+            // Update database
+            self.todo?.update(todoFull) { _  in }
         }
     }
 
@@ -66,19 +73,25 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
     }
 
     func delete() {
-        self.navigationController.popViewController(animated: true)
         guard let todo = self.todo else {
             QLogError("Todo is nil")
             return
         }
-        // Update database
-        todo.delete() {
-            // Update to server
-            NetworkController.shared.delete(id: todo.id) { _ in }
+        // Update to server
+        NetworkController.shared.delete(id: todo.id) { _ in
+            // Update database
+            todo.delete() {
+            }
         }
+        self.navigationController.popViewController(animated: true)
     }
 
-    func save(_ todoBase: TodoBase) {
+    func save() {
+        let desc = self.todoTableViewController.descriptionTextField.text
+        let done = self.todoTableViewController.doneSwitch.isOn
+        let dueDate = self.todoTableViewController.datePicker.date.rfc3339String
+        let title = self.todoTableViewController.titleTextField.text ?? ""
+        let todoBase = TodoBase(desc: desc, done: done, dueDate: dueDate, title: title)
         self.todoTableViewController.dismiss(animated: true)
         // Update to server
         NetworkController.shared.create(todoBase: todoBase) { _, todoFull in

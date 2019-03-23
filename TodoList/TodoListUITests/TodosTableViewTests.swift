@@ -11,16 +11,12 @@ import XCTest
 class TodosTableViewTests: XCTestCase {
 
     private let app = XCUIApplication()
-
-    static private var simpledateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .medium
-        return formatter
-    }()
+    private var backButton: XCUIElement!
+    private var cancelButton: XCUIElement!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.backButton = self.app.navigationBars["Todo"].buttons["Back"]
+        self.cancelButton = self.app.navigationBars["Todo"].buttons["Cancel"]
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -32,6 +28,11 @@ class TodosTableViewTests: XCTestCase {
     }
 
     override func tearDown() {
+        if self.backButton.exists {
+            self.backButton.tap()
+        } else if self.cancelButton.exists {
+            self.cancelButton.tap()
+        }
         self.deleteAll()
     }
 
@@ -106,7 +107,7 @@ class TodosTableViewTests: XCTestCase {
 
         // 3. Assert
         self.app.tables.cells.firstMatch.tap()
-        XCTAssertTrue(self.app.switches.firstMatch.isEnabled)
+        XCTAssertEqual(self.app.switches.firstMatch.value as! String, "1")
 
         // 4 Annihilate
         backButton.tap()

@@ -67,6 +67,7 @@
 		9FB81ED822465245002BF3F1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81ED722465245002BF3F1 /* SettingsTableViewController.swift */; };
 		9FB81EDA22465275002BF3F1 /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81ED922465275002BF3F1 /* SettingsTableViewController.storyboard */; };
 		9FB81EDC22465611002BF3F1 /* SettingsTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EDB22465611002BF3F1 /* SettingsTableViewCoordinator.swift */; };
+		9FB81F252246AADA002BF3F1 /* TodoTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81F242246AAD9002BF3F1 /* TodoTableViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +355,7 @@
 		9FB81ED722465245002BF3F1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9FB81ED922465275002BF3F1 /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
 		9FB81EDB22465611002BF3F1 /* SettingsTableViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCoordinator.swift; sourceTree = "<group>"; };
+		9FB81F242246AAD9002BF3F1 /* TodoTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3FF28F22401BBA0096E7C2 /* TodosTableViewTests.swift */,
+				9FB81F242246AAD9002BF3F1 /* TodoTableViewTests.swift */,
 				9F3FF29122401BBA0096E7C2 /* Info.plist */,
 				9F3FF29F22401CFB0096E7C2 /* .swiftlint.yml */,
 			);
@@ -1082,6 +1085,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3FF29022401BBA0096E7C2 /* TodosTableViewTests.swift in Sources */,
+				9FB81F252246AADA002BF3F1 /* TodoTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

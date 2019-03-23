@@ -14,7 +14,7 @@ protocol TodoTableViewControllerDelegate: class {
     func back()
     func cancel()
     func delete()
-    func save(_ todoBase: TodoBase)
+    func save()
 
 }
 
@@ -53,6 +53,9 @@ class TodoTableViewController: UITableViewController {
         self.datePickerButtonPlusOneYear.setTitle(Texts.TodoTableViewController.plusOneYear, for: .normal)
         self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
         self.doneTitleLabel.text = Texts.TodoTableViewController.done
+        // Set constraints for titleTextField
+        self.titleTextField.smartInsertDeleteType = .no
+        self.titleTextField.delegate = self
         self.hideDatePicker()
         self.loadData()
 
@@ -74,13 +77,8 @@ class TodoTableViewController: UITableViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Is only called when back button is touched
+        // Is only called when view controller was pushed
         if self.isMovingFromParent {
-            // Update from UI
-            self.todo?.desc = self.descriptionTextField.text
-            self.todo?.done = self.doneSwitch.isOn
-            self.todo?.dueDate = self.datePicker.date
-            self.todo?.title = self.titleTextField.text ?? ""
             self.delegate?.back()
         }
     }
@@ -161,15 +159,7 @@ class TodoTableViewController: UITableViewController {
     }
 
     @objc func save() {
-        let description = self.descriptionTextField.text
-        let done = self.doneSwitch.isOn
-        let dueDate = self.datePicker.date.rfc3339String
-        guard let title = self.titleTextField.text else {
-            QLogError("Title not set")
-            return
-        }
-        let todoBase = TodoBase(desc: description, done: done, dueDate: dueDate, title: title)
-        self.delegate?.save(todoBase)
+        self.delegate?.save()
     }
 
     @objc func deleteTodo() {
@@ -215,6 +205,22 @@ class TodoTableViewController: UITableViewController {
     @IBAction func datePlusOneYear(_ sender: Any) {
         self.datePicker.date = Calendar.current.date(byAdding: .year, value: 1, to: self.datePicker.date)!
         self.dueDateLabel.text = self.datePicker.date.simpleDateString
+    }
+
+}
+
+// MARK: - UITextFieldDelegate
+
+extension TodoTableViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = self.titleTextField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 30
     }
 
 }

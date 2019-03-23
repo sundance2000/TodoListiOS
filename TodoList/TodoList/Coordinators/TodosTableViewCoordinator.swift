@@ -43,10 +43,11 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
     }
 
     func delete(_ todo: Todo) {
-        // Update database
-        todo.delete() {
-            // Update to server
-            NetworkController.shared.delete(id: todo.id) { _ in }
+        // Update to server
+        NetworkController.shared.delete(id: todo.id) { _ in
+            // Update database
+            todo.delete() {
+            }
         }
     }
 
@@ -70,13 +71,15 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
 
     func toggle(_ todo: Todo) {
         let done = !todo.done
+        let id = todo.id
         // Update from server
-        NetworkController.shared.get(id: todo.id) { _, todoFull in
-            // Update database
-            todo.update(todoFull) { todo  in
-                todo.done = done
-                // Update to server
-                NetworkController.shared.update(id: todo.id, todoBase: todo.todoBase, actionHandler: { _ in })
+        NetworkController.shared.get(id: id) { _, todoFull in
+            // Update to server
+            let todoBase = TodoBase(desc: todoFull.desc, done: done, dueDate: todoFull.dueDate, title: todoFull.title)
+            NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
+                // Update database
+                let todoFullNew = TodoFull(id: todoFull.id, desc: todoFull.desc, done: done, dueDate: todoFull.dueDate, title: todoFull.title)
+                todo.update(todoFullNew) { _  in }
             }
         }
     }
