@@ -9,7 +9,9 @@
 import QLog
 import UIKit
 
-/// Coordinates handling of todos table
+/**
+ Coordinates handling of todo table
+ */
 class TodoTableViewCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
@@ -31,6 +33,10 @@ class TodoTableViewCoordinator: Coordinator {
         self.todoTableViewController.todo = self.todo
     }
 
+    /**
+     Pushes the view controller onto the stack or presents it modally,
+     depending on the todo object
+     */
     func start() {
         // If no todo is set, show view controller modally to create a new todo
         if self.todo == nil {

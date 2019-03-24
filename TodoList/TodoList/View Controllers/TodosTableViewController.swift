@@ -12,6 +12,7 @@ import UIKit
 
 protocol TodosTableViewControllerDelegate: class {
 
+    /// add
     func add()
     func delete(_ todo: Todo)
     func select(_ todo: Todo)

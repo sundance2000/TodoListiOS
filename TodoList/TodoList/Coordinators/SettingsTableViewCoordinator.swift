@@ -10,7 +10,9 @@ import SwiftyUserDefaults
 import QLog
 import UIKit
 
-/// Coordinates handling of settings table
+/**
+ Coordinates handling of settings table
+ */
 class SettingsTableViewCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
@@ -28,6 +30,9 @@ class SettingsTableViewCoordinator: Coordinator {
         self.settingsTableViewController.delegate = self
     }
 
+    /**
+     Shows the view controller modally
+     */
     func start() {
         self.settingsTableViewController.serverAddress = Defaults[.serverAddress]
         let navigationContoller = UINavigationController(rootViewController: self.settingsTableViewController)
