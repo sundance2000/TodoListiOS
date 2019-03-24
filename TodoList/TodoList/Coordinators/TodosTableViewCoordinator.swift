@@ -57,6 +57,9 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
             // Update database
             TodoRepository.shared.update(todo, with: todoFull) { todo in
                 // Show todo
+                guard todo != nil else {
+                    return
+                }
                 self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: todo)
                 self.todoTableViewCoordinator?.start()
             }
@@ -79,7 +82,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
             NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
                 // Update database
                 let todoFullNew = TodoFull(id: todoFull.id, desc: todoFull.desc, done: done, dueDate: todoFull.dueDate, title: todoFull.title)
-                TodoRepository.shared.update(todo, with: todoFullNew) { _ in }
+                TodoRepository.shared.update(todo, with: todoFullNew)
             }
         }
     }

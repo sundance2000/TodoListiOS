@@ -40,7 +40,7 @@ class StringTests: XCTestCase {
 
     func testDayDate() {
         // 1. Arrange
-        let date = Date(timeIntervalSince1970: 1551394800)
+        let date = Date(timeIntervalSince1970: 1551398400)
         let string = "1. 3. 2019"
 
         // 3. Assert

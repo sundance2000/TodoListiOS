@@ -52,6 +52,7 @@
 		9F8646162247A81100712CDD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646152247A81100712CDD /* Service.swift */; };
 		9F8646182247A99E00712CDD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646172247A99E00712CDD /* Repository.swift */; };
 		9F86461A2247AC6000712CDD /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646192247AC6000712CDD /* TodoRepository.swift */; };
+		9F8646652247C20900712CDD /* TodoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646642247C20900712CDD /* TodoRepositoryTests.swift */; };
 		9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93560E224037A90092009A /* AppCoordinator.swift */; };
 		9F935611224037D20092009A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935610224037D20092009A /* Coordinator.swift */; };
 		9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935612224037F40092009A /* RootViewCoordinator.swift */; };
@@ -343,6 +344,7 @@
 		9F8646152247A81100712CDD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9F8646172247A99E00712CDD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9F8646192247AC6000712CDD /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		9F8646642247C20900712CDD /* TodoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepositoryTests.swift; sourceTree = "<group>"; };
 		9F93560E224037A90092009A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9F935610224037D20092009A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F935612224037F40092009A /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
@@ -467,7 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				9F93561B22403C0F0092009A /* Main */,
-				9F791A2A2241812E003DA51B /* Database */,
+				9F791A2A2241812E003DA51B /* Model */,
 				9F93561D22403C240092009A /* Coordinators */,
 				9FB81E45224534DE002BF3F1 /* Util */,
 				9F3FF28622401BBA0096E7C2 /* Info.plist */,
@@ -556,14 +558,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		9F791A2A2241812E003DA51B /* Database */ = {
+		9F791A2A2241812E003DA51B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F8646642247C20900712CDD /* TodoRepositoryTests.swift */,
 				9F791A2B22418147003DA51B /* TodoFullTests.swift */,
 				9F791A3122418A37003DA51B /* TodoListTests.swift */,
 				9F791A2F22418965003DA51B /* TodoBaseTests.swift */,
 			);
-			path = Database;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9F791A332241987B003DA51B /* View Controllers */ = {
@@ -1085,6 +1088,7 @@
 				9F791A3222418A37003DA51B /* TodoListTests.swift in Sources */,
 				9F791A3022418965003DA51B /* TodoBaseTests.swift in Sources */,
 				9F2A95F8224033FE00E6F74F /* TestAppDelegate.swift in Sources */,
+				9F8646652247C20900712CDD /* TodoRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

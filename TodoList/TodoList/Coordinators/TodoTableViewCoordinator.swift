@@ -65,7 +65,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         // Update to server
         NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
             // Update database
-            TodoRepository.shared.update(todo, with: todoFull) { _ in }
+            TodoRepository.shared.update(todo, with: todoFull)
         }
     }
 
