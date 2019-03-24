@@ -14,7 +14,14 @@ class TodosTableViewTests: XCTestCase {
     private var backButton: XCUIElement!
     private var cancelButton: XCUIElement!
 
+    private var initialized = false
+
     override func setUp() {
+        if !self.initialized {
+            self.initialize()
+            self.initialized = true
+        }
+
         self.backButton = self.app.navigationBars["Todo"].buttons["Back"]
         self.cancelButton = self.app.navigationBars["Todo"].buttons["Cancel"]
 
@@ -54,13 +61,23 @@ class TodosTableViewTests: XCTestCase {
     }
 
     private func deleteAll() {
-        let deleteButton = self.app.tables.buttons["Delete"]
-        var cell = self.app.tables.cells.firstMatch
-        while cell.exists {
-            cell.swipeLeft()
-            deleteButton.tap()
-            cell = self.app.tables.cells.firstMatch
+        for _ in 0..<self.app.tables.cells.count {
+            self.app.tables.cells.element(boundBy: 0).swipeLeft()
+            self.app.tables.cells.element(boundBy: 0).buttons["Delete"].tap()
         }
+    }
+
+    private func initialize() {
+        XCUIApplication().launch()
+        self.app.navigationBars["TodoList.TodosTableView"].children(matching: .button).element(boundBy: 0).tap()
+        self.app.tables.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["Clear text"]/*[[".textFields.buttons[\"Clear text\"]",".buttons[\"Clear text\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let serverAddressTextField = self.app.tables.textFields.firstMatch
+        serverAddressTextField.tap()
+        serverAddressTextField.typeText("https://todo-list-integration-test.herokuapp.com")
+        self.app.navigationBars["Settings"].buttons["Done"].tap()
+        // Give integration test server some time to start
+        sleep(60)
+        XCUIApplication().terminate()
     }
 
     func testCreateTodo() {

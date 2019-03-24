@@ -20,6 +20,8 @@ class TodoTableViewTests: XCTestCase {
     private var descriptionTextField: XCUIElement!
     private var doneSwitch: XCUIElement!
 
+    private var initialized = false
+
     static private var simpledateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .none
@@ -28,6 +30,11 @@ class TodoTableViewTests: XCTestCase {
     }()
 
     override func setUp() {
+        if !self.initialized {
+            self.initialize()
+            self.initialized = true
+        }
+
         self.addButton = self.app.navigationBars["TodoList.TodosTableView"].buttons["Add"]
         self.backButton = self.app.navigationBars["Todo"].buttons["Back"]
         self.cancelButton = self.app.navigationBars["Todo"].buttons["Cancel"]
@@ -63,13 +70,23 @@ class TodoTableViewTests: XCTestCase {
     }
 
     private func deleteAll() {
-        let deleteButton = self.app.tables.buttons["Delete"]
-        var cell = self.app.tables.cells.firstMatch
-        while cell.exists {
-            cell.swipeLeft()
-            deleteButton.tap()
-            cell = self.app.tables.cells.firstMatch
+        for _ in 0..<self.app.tables.cells.count {
+            self.app.tables.cells.element(boundBy: 0).swipeLeft()
+            self.app.tables.cells.element(boundBy: 0).buttons["Delete"].tap()
         }
+    }
+
+    private func initialize() {
+        XCUIApplication().launch()
+        self.app.navigationBars["TodoList.TodosTableView"].children(matching: .button).element(boundBy: 0).tap()
+        self.app.tables.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["Clear text"]/*[[".textFields.buttons[\"Clear text\"]",".buttons[\"Clear text\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let serverAddressTextField = self.app.tables.textFields.firstMatch
+        serverAddressTextField.tap()
+        serverAddressTextField.typeText("https://todo-list-integration-test.herokuapp.com")
+        self.app.navigationBars["Settings"].buttons["Done"].tap()
+        // Give integration test server some time to start
+        sleep(60)
+        XCUIApplication().terminate()
     }
 
     // MARK: - Create
