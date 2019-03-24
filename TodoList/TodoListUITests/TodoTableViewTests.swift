@@ -30,8 +30,8 @@ class TodoTableViewTests: XCTestCase {
     override func setUp() {
         self.initialize()
 
-        self.addButton = self.app.navigationBars["TodoList.TodosTableView"].buttons["Add"]
-        self.backButton = self.app.navigationBars["Todo"].buttons["Back"]
+        self.addButton = self.app.navigationBars["Todos"].buttons["Add"]
+        self.backButton = self.app.navigationBars["Todo"].buttons["Todos"]
         self.cancelButton = self.app.navigationBars["Todo"].buttons["Cancel"]
         self.saveButton = self.app.navigationBars["Todo"].buttons["Save"]
         self.titleTextField = self.app.tables.textFields.element(boundBy: 0)
@@ -71,10 +71,10 @@ class TodoTableViewTests: XCTestCase {
 
     private func initialize() {
         XCUIApplication().launch()
-        self.app.navigationBars["TodoList.TodosTableView"].children(matching: .button).element(boundBy: 0).tap()
+        self.app.navigationBars["Todos"].children(matching: .button).element(boundBy: 0).tap()
         let serverAddressTextField = self.app.tables.textFields.firstMatch
         if serverAddressTextField.value as! String != "https://todo-list-integration-test.herokuapp.com" {
-            self.app.tables.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["Clear text"]/*[[".textFields.buttons[\"Clear text\"]",".buttons[\"Clear text\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            self.app.tables.children(matching: .cell).element(boundBy: 0).buttons["Clear text"].tap()
             serverAddressTextField.tap()
             serverAddressTextField.typeText("https://todo-list-integration-test.herokuapp.com")
             self.app.navigationBars["Settings"].buttons["Done"].tap()
@@ -193,18 +193,18 @@ class TodoTableViewTests: XCTestCase {
     func testUpdateTodoClearDescription() {
         // 1. Arrange
         self.addButton.tap()
-        self.titleTextField.tap()
-        self.titleTextField.typeText("A")
         self.descriptionTextField.tap()
         self.descriptionTextField.typeText("1")
+        self.titleTextField.tap()
+        self.titleTextField.typeText("A")
         self.doneSwitch.tap()
         self.saveButton.tap()
 
         // 2. Action
         self.app.tables.cells.firstMatch.tap()
+        self.app.tables.children(matching: .cell).element(boundBy: 2).buttons.firstMatch.tap()
         self.titleTextField.tap()
         self.titleTextField.typeText("B")
-        self.app.tables.children(matching: .cell).element(boundBy: 2)/*@START_MENU_TOKEN@*/.buttons["Clear text"]/*[[".textFields.buttons[\"Clear text\"]",".buttons[\"Clear text\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         self.doneSwitch.tap()
         self.backButton.tap()
 
@@ -228,7 +228,7 @@ class TodoTableViewTests: XCTestCase {
 
         // 2. Action
         self.app.tables.cells.firstMatch.tap()
-        self.app.tables.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["Clear text"]/*[[".textFields.buttons[\"Clear text\"]",".buttons[\"Clear text\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        self.app.tables.children(matching: .cell).element(boundBy: 0).buttons["Clear text"].tap()
         self.descriptionTextField.tap()
         self.descriptionTextField.typeText("2")
         self.doneSwitch.tap()

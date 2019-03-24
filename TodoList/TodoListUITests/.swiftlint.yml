@@ -18,6 +18,6 @@ file_header:
 file_length:
   warning: 500
   error: 1200
-function_body_length: 15
+function_body_length: 20
 cyclomatic_complexity: 5
 function_parameter_count: 4

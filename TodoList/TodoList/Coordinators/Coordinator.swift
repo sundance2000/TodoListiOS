@@ -8,7 +8,9 @@
 
 import Foundation
 
-/// The coordinator protocol
+/**
+ The coordinator protocol
+ */
 protocol CoordinatorProtocol: class {
 
     /**

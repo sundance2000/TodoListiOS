@@ -17,7 +17,7 @@ class TodosTableViewTests: XCTestCase {
     override func setUp() {
         self.initialize()
 
-        self.backButton = self.app.navigationBars["Todo"].buttons["Back"]
+        self.backButton = self.app.navigationBars["Todo"].buttons["Todos"]
         self.cancelButton = self.app.navigationBars["Todo"].buttons["Cancel"]
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
@@ -39,7 +39,7 @@ class TodosTableViewTests: XCTestCase {
     }
 
     private func create(_ title: String) {
-        let addButton = self.app.navigationBars["TodoList.TodosTableView"].buttons["Add"]
+        let addButton = self.app.navigationBars["Todos"].buttons["Add"]
         let saveButton = self.app.navigationBars["Todo"].buttons["Save"]
         let titleTextField = self.app.tables.textFields["Title"]
         addButton.tap()
@@ -62,10 +62,10 @@ class TodosTableViewTests: XCTestCase {
 
     private func initialize() {
         XCUIApplication().launch()
-        self.app.navigationBars["TodoList.TodosTableView"].children(matching: .button).element(boundBy: 0).tap()
+        self.app.navigationBars["Todos"].children(matching: .button).element(boundBy: 0).tap()
         let serverAddressTextField = self.app.tables.textFields.firstMatch
         if serverAddressTextField.value as! String != "https://todo-list-integration-test.herokuapp.com" {
-            self.app.tables.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["Clear text"]/*[[".textFields.buttons[\"Clear text\"]",".buttons[\"Clear text\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            self.app.tables.children(matching: .cell).element(boundBy: 0).buttons["Clear text"].tap()
             serverAddressTextField.tap()
             serverAddressTextField.typeText("https://todo-list-integration-test.herokuapp.com")
             self.app.navigationBars["Settings"].buttons["Done"].tap()

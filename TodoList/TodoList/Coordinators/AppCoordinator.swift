@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-/// Coordinates handling of the app
+/**
+ Coordinates handling of the app
+ */
 class AppCoordinator: RootViewCoordinator {
 
     private let window: UIWindow
@@ -18,6 +20,10 @@ class AppCoordinator: RootViewCoordinator {
 
     var rootViewController: UIViewController
 
+    /**
+     Constructor for AppCoordinator
+     - parameter window: Window to present the application in
+     */
     init(window: UIWindow) {
         self.window = window
         let navigationController = UINavigationController()
@@ -25,6 +31,11 @@ class AppCoordinator: RootViewCoordinator {
         self.rootViewController = navigationController
     }
 
+    /**
+     Sets the root view controller of the window,
+     starts the child coordinator
+     and shows the window with the application
+     */
     func start() {
         self.window.rootViewController = self.rootViewController
         self.todosTableViewCoordinator.start()
