@@ -8,11 +8,14 @@
 
 import Foundation
 
-/// The service protocol
+/**
+ The service protocol
+ */
 protocol ServiceProtocol: class {
 
     /**
-     Starts the service     */
+     Starts the service
+     */
     func start()
 
 }
