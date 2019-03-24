@@ -24,6 +24,7 @@ class SettingsTableViewCoordinator: Coordinator {
         self.navigationController = navigationController
         let storyboard = UIStoryboard(name: "SettingsTableViewController", bundle: nil)
         self.settingsTableViewController = storyboard.instantiateInitialViewController()! as! SettingsTableViewController
+        super.init()
         self.settingsTableViewController.delegate = self
     }
 

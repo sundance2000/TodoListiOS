@@ -11,7 +11,7 @@ import Foundation
 import QLog
 import SwiftyUserDefaults
 
-class NetworkController: Component {
+class NetworkController: Service {
 
     private let jsonDecoder = JSONDecoder()
     private let jsonEncoder = JSONEncoder()
@@ -38,7 +38,7 @@ class NetworkController: Component {
             }
             self.url = url.appendingPathComponent("todos")
             self.list(state: "all") { statusCode, todoList in
-                Todo.save(todoList)
+                TodoRepository.shared.save(todoList)
             }
         }
     }

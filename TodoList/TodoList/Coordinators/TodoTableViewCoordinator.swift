@@ -26,6 +26,7 @@ class TodoTableViewCoordinator: Coordinator {
         self.todo = todo
         let storyboard = UIStoryboard(name: "TodoTableViewController", bundle: nil)
         self.todoTableViewController = storyboard.instantiateInitialViewController()! as! TodoTableViewController
+        super.init()
         self.todoTableViewController.delegate = self
         self.todoTableViewController.todo = self.todo
     }
@@ -64,7 +65,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         // Update to server
         NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
             // Update database
-            self.todo?.update(todoFull) { _  in }
+            TodoRepository.shared.update(todo, with: todoFull) { _ in }
         }
     }
 
@@ -80,8 +81,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         // Update to server
         NetworkController.shared.delete(id: todo.id) { _ in
             // Update database
-            todo.delete() {
-            }
+            TodoRepository.shared.delete(todo)
         }
         self.navigationController.popViewController(animated: true)
     }
@@ -96,7 +96,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         // Update to server
         NetworkController.shared.create(todoBase: todoBase) { _, todoFull in
             // Update database
-            Todo.save(todoFull)
+            TodoRepository.shared.save(todoFull)
         }
     }
 

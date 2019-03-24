@@ -23,6 +23,7 @@ class TodosTableViewCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.todosTableViewController = TodosTableViewController()
+        super.init()
         self.todosTableViewController.delegate = self
     }
 
@@ -46,8 +47,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
         // Update to server
         NetworkController.shared.delete(id: todo.id) { _ in
             // Update database
-            todo.delete() {
-            }
+            TodoRepository.shared.delete(todo)
         }
     }
 
@@ -55,7 +55,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
         // Update from server
         NetworkController.shared.get(id: todo.id) { _, todoFull in
             // Update database
-            todo.update(todoFull) { todo in
+            TodoRepository.shared.update(todo, with: todoFull) { todo in
                 // Show todo
                 self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: todo)
                 self.todoTableViewCoordinator?.start()
@@ -79,7 +79,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
             NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
                 // Update database
                 let todoFullNew = TodoFull(id: todoFull.id, desc: todoFull.desc, done: done, dueDate: todoFull.dueDate, title: todoFull.title)
-                todo.update(todoFullNew) { _  in }
+                TodoRepository.shared.update(todo, with: todoFullNew) { _ in }
             }
         }
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 /// The coordinator protocol
-protocol Coordinator: class {
+protocol CoordinatorProtocol: class {
 
     /**
      Starts the coordinator and pushes the corresponding view controller
@@ -17,3 +17,5 @@ protocol Coordinator: class {
     func start()
 
 }
+
+typealias Coordinator = Component & CoordinatorProtocol
