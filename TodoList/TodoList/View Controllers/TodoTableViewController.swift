@@ -57,6 +57,7 @@ class TodoTableViewController: UITableViewController {
         self.titleTextField.smartInsertDeleteType = .no
         self.titleTextField.delegate = self
         self.hideDatePicker()
+        self.hideKeyboardWhenTappedAround()
         self.loadData()
 
     }

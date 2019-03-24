@@ -28,9 +28,10 @@ class SettingsTableViewController: UITableViewController {
         // Localization
         self.title = Texts.SettingsTableViewController.viewControllerTitle
         // Load data
-        self.serverAddressTextField.text = self.serverAddress
+        self.serverAddressTextField?.text = self.serverAddress
         // Add bar buttons
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {

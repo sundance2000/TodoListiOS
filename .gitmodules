@@ -13,3 +13,6 @@
 [submodule "Frameworks/GameIcons"]
 	path = Frameworks/GameIcons
 	url = https://github.com/QuantumApplications/GameIcons.git
+[submodule "Frameworks/Cuckoo"]
+	path = Frameworks/Cuckoo
+	url = https://github.com/Brightify/Cuckoo.git

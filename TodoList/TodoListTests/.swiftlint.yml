@@ -5,6 +5,8 @@ disabled_rules:
 opt_in_rules:
 - file_header
 - cyclomatic_complexity
+excluded:
+- GeneratedMocks.swift
 
 file_header:
   required_pattern: |

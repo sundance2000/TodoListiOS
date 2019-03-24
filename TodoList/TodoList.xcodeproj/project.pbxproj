@@ -53,6 +53,10 @@
 		9F8646182247A99E00712CDD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646172247A99E00712CDD /* Repository.swift */; };
 		9F86461A2247AC6000712CDD /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646192247AC6000712CDD /* TodoRepository.swift */; };
 		9F8646652247C20900712CDD /* TodoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646642247C20900712CDD /* TodoRepositoryTests.swift */; };
+		9F8646672247E19F00712CDD /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646662247E19F00712CDD /* AppCoordinatorTests.swift */; };
+		9F86469A2247E7BB00712CDD /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8646992247E7BB00712CDD /* Cuckoo.framework */; };
+		9F86469C2247EBF700712CDD /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86469B2247EBF600712CDD /* GeneratedMocks.swift */; };
+		9F86469F2247EC6500712CDD /* SettingsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86469E2247EC6500712CDD /* SettingsTableViewControllerTests.swift */; };
 		9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93560E224037A90092009A /* AppCoordinator.swift */; };
 		9F935611224037D20092009A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935610224037D20092009A /* Coordinator.swift */; };
 		9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935612224037F40092009A /* RootViewCoordinator.swift */; };
@@ -200,6 +204,41 @@
 			remoteGlobalIDString = 9F8B28641FDDEE8F006C8917;
 			remoteInfo = GameIcons;
 		};
+		9F8646702247E74300712CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8646682247E74200712CDD /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A28D1FBB1CFC0058FEC5;
+			remoteInfo = "Cuckoo-iOS";
+		};
+		9F8646722247E74300712CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8646682247E74200712CDD /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A2B61FBB211F0058FEC5;
+			remoteInfo = Cuckoo_iOSTests;
+		};
+		9F8646742247E74300712CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8646682247E74200712CDD /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A29B1FBB1D400058FEC5;
+			remoteInfo = "Cuckoo-macOS";
+		};
+		9F8646762247E74300712CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8646682247E74200712CDD /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A2A71FBB20830058FEC5;
+			remoteInfo = Cuckoo_macOSTests;
+		};
+		9F8646972247E7B000712CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8646682247E74200712CDD /* Cuckoo.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 18E2A28C1FBB1CFC0058FEC5;
+			remoteInfo = "Cuckoo-iOS";
+		};
 		9F93564A22403D8B0092009A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F93563F22403D8A0092009A /* Alamofire.xcodeproj */;
@@ -345,6 +384,11 @@
 		9F8646172247A99E00712CDD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9F8646192247AC6000712CDD /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		9F8646642247C20900712CDD /* TodoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepositoryTests.swift; sourceTree = "<group>"; };
+		9F8646662247E19F00712CDD /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		9F8646682247E74200712CDD /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
+		9F8646992247E7BB00712CDD /* Cuckoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cuckoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F86469B2247EBF600712CDD /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		9F86469E2247EC6500712CDD /* SettingsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9F93560E224037A90092009A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9F935610224037D20092009A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F935612224037F40092009A /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
@@ -383,6 +427,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F86469A2247E7BB00712CDD /* Cuckoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +444,10 @@
 		9F2A95DC2240312800E6F74F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F8646992247E7BB00712CDD /* Cuckoo.framework */,
 				9F93563F22403D8A0092009A /* Alamofire.xcodeproj */,
 				9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */,
+				9F8646682247E74200712CDD /* Cuckoo.xcodeproj */,
 				9F862A742246EC6600712CDD /* GameIcons.xcodeproj */,
 				9F2A95DD2240313C00E6F74F /* QLog.xcodeproj */,
 				9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */,
@@ -471,7 +518,9 @@
 				9F93561B22403C0F0092009A /* Main */,
 				9F791A2A2241812E003DA51B /* Model */,
 				9F93561D22403C240092009A /* Coordinators */,
+				9F86469D2247EC4E00712CDD /* View Controllers */,
 				9FB81E45224534DE002BF3F1 /* Util */,
+				9F86469B2247EBF600712CDD /* GeneratedMocks.swift */,
 				9F3FF28622401BBA0096E7C2 /* Info.plist */,
 				9F3FF29E22401CEC0096E7C2 /* .swiftlint.yml */,
 			);
@@ -601,6 +650,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9F8646692247E74200712CDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F8646712247E74300712CDD /* Cuckoo.framework */,
+				9F8646732247E74300712CDD /* Cuckoo_iOSTests.xctest */,
+				9F8646752247E74300712CDD /* Cuckoo.framework */,
+				9F8646772247E74300712CDD /* Cuckoo_macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F86469D2247EC4E00712CDD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F86469E2247EC6500712CDD /* SettingsTableViewControllerTests.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		9F93561922403BE00092009A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +702,7 @@
 		9F93561D22403C240092009A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				9F8646662247E19F00712CDD /* AppCoordinatorTests.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -701,14 +770,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F3FF29722401BBA0096E7C2 /* Build configuration list for PBXNativeTarget "TodoListTests" */;
 			buildPhases = (
+				9F3FF2A122401DEA0096E7C2 /* ShellScript */,
 				9F3FF27C22401BBA0096E7C2 /* Sources */,
 				9F3FF27D22401BBA0096E7C2 /* Frameworks */,
 				9F3FF27E22401BBA0096E7C2 /* Resources */,
-				9F3FF2A122401DEA0096E7C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9F8646982247E7B000712CDD /* PBXTargetDependency */,
 				9F3FF28222401BBA0096E7C2 /* PBXTargetDependency */,
 			);
 			name = TodoListTests;
@@ -778,6 +848,10 @@
 				{
 					ProductGroup = 9F791A002240422D003DA51B /* Products */;
 					ProjectRef = 9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */;
+				},
+				{
+					ProductGroup = 9F8646692247E74200712CDD /* Products */;
+					ProjectRef = 9F8646682247E74200712CDD /* Cuckoo.xcodeproj */;
 				},
 				{
 					ProductGroup = 9F862A752246EC6600712CDD /* Products */;
@@ -884,6 +958,34 @@
 			fileType = wrapper.cfbundle;
 			path = GameIconsTests.xctest;
 			remoteRef = 9F862A7C2246EC6600712CDD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F8646712247E74300712CDD /* Cuckoo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cuckoo.framework;
+			remoteRef = 9F8646702247E74300712CDD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F8646732247E74300712CDD /* Cuckoo_iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Cuckoo_iOSTests.xctest;
+			remoteRef = 9F8646722247E74300712CDD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F8646752247E74300712CDD /* Cuckoo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cuckoo.framework;
+			remoteRef = 9F8646742247E74300712CDD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F8646772247E74300712CDD /* Cuckoo_macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Cuckoo_macOSTests.xctest;
+			remoteRef = 9F8646762247E74300712CDD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9F93564B22403D8B0092009A /* Alamofire.framework */ = {
@@ -1007,6 +1109,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/TodoList/Coordinators/SettingsTableViewCoordinator.swift",
+				"$(SRCROOT)/TodoList/View Controllers/SettingsTableViewController.swift",
 			);
 			outputFileListPaths = (
 			);
@@ -1014,7 +1118,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    cd TodoListTests\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/TodoListTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PROJECT_DIR}/../Frameworks/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"\n";
 		};
 		9F3FF2A222401DFC0096E7C2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1086,8 +1190,11 @@
 				9F791A2C22418147003DA51B /* TodoFullTests.swift in Sources */,
 				9FB81E5922453A40002BF3F1 /* StringTests.swift in Sources */,
 				9F791A3222418A37003DA51B /* TodoListTests.swift in Sources */,
+				9F86469C2247EBF700712CDD /* GeneratedMocks.swift in Sources */,
+				9F8646672247E19F00712CDD /* AppCoordinatorTests.swift in Sources */,
 				9F791A3022418965003DA51B /* TodoBaseTests.swift in Sources */,
 				9F2A95F8224033FE00E6F74F /* TestAppDelegate.swift in Sources */,
+				9F86469F2247EC6500712CDD /* SettingsTableViewControllerTests.swift in Sources */,
 				9F8646652247C20900712CDD /* TodoRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1133,6 +1240,11 @@
 			isa = PBXTargetDependency;
 			name = GameIcons;
 			targetProxy = 9F86458A2246F4E500712CDD /* PBXContainerItemProxy */;
+		};
+		9F8646982247E7B000712CDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cuckoo-iOS";
+			targetProxy = 9F8646972247E7B000712CDD /* PBXContainerItemProxy */;
 		};
 		9FB81ED2224582BF002BF3F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

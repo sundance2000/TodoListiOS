@@ -154,3 +154,8 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# ----------------------------------------
+# Generated
+# ----------------------------------------
+/TodoList/TodoListTests/GeneratedMocks.swift
