@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Stores basic app information
+ */
 struct App {
 
     static let bundleDomain = "de.christian-oberdoerfer"

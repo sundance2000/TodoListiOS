@@ -111,7 +111,6 @@ class TodosTableViewTests: XCTestCase {
 
     func testToggleTodo() {
         // 1. Arrange
-        let backButton = self.app.navigationBars["Todo"].buttons["Back"]
         self.create("A")
 
         // 2. Action
@@ -120,9 +119,6 @@ class TodosTableViewTests: XCTestCase {
         // 3. Assert
         self.app.tables.cells.firstMatch.tap()
         XCTAssertEqual(self.app.switches.firstMatch.value as! String, "1")
-
-        // 4 Annihilate
-        backButton.tap()
     }
 
     func testTodoSectionToday() {

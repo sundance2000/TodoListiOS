@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         main()
+        // Start the network service
+        NetworkService.shared.start()
         // Start coordinator
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        NetworkService.shared.start()
         self.appCoordinator = AppCoordinator(window: self.window!)
         self.appCoordinator.start()
         return true

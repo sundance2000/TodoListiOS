@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Stores basic strings
+ */
 struct Strings {
 
     struct ServiceNames {

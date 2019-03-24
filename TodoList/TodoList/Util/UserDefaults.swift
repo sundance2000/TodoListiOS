@@ -10,6 +10,6 @@ import SwiftyUserDefaults
 
 extension DefaultsKeys {
 
-    static let serverAddress = DefaultsKey<String>(Configuration.serverAddress, defaultValue: Configuration.serverAddressDefaultValue)
+    static let serverAddress = DefaultsKey<String>(Preferences.serverAddress, defaultValue: Preferences.serverAddressDefaultValue)
 
 }

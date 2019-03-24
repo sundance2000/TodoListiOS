@@ -15,6 +15,9 @@ import UIKit
 let appDelegateClass: AnyClass? = NSClassFromString("TodoListTests.TestAppDelegate") ?? AppDelegate.self
 _ = UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass!))
 
+/**
+ Sets the appearance of the application
+ */
 private func setAppearance() {
     // Set global colors
     UIView.appearance().tintColor = QColor.blue.color
@@ -28,6 +31,9 @@ private func setAppearance() {
     UITabBar.appearance().backgroundColor = UIColor.white
 }
 
+/**
+ Configures the logger
+ */
 private func setQlog() {
     QLog.Images.archive = GameIcon.openfolder.tabBarImage
     QLog.Images.live = GameIcon.histogram.tabBarImage
@@ -43,6 +49,9 @@ private func setQlog() {
     QLog.colorError = QColor.red.color
 }
 
+/**
+ The "main" function to set some global settings
+ */
 func main() {
     setAppearance()
     setQlog()

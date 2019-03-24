@@ -10,10 +10,14 @@ import CoreStore
 import Foundation
 import QLog
 
+/**
+ Stores database information
+ */
 struct Database {
 
     static let modelName = App.name
 
+    /// The CoreStore data stack of the application
     static let dataStack: DataStack = {
         let dataStack = DataStack(xcodeModelName: Database.modelName)
         do {

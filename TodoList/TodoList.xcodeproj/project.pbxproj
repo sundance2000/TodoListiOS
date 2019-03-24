@@ -66,7 +66,7 @@
 		9FB81E5722453502002BF3F1 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81E5622453502002BF3F1 /* DateTests.swift */; };
 		9FB81E5922453A40002BF3F1 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81E5822453A40002BF3F1 /* StringTests.swift */; };
 		9FB81EAC22456FBD002BF3F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81EAE22456FBD002BF3F1 /* Localizable.strings */; };
-		9FB81EB12245811A002BF3F1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EB022458119002BF3F1 /* Configuration.swift */; };
+		9FB81EB12245811A002BF3F1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EB022458119002BF3F1 /* Preferences.swift */; };
 		9FB81EB322458189002BF3F1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81EB222458189002BF3F1 /* UserDefaults.swift */; };
 		9FB81ECF224582BE002BF3F1 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB81EBA22458280002BF3F1 /* SwiftyUserDefaults.framework */; };
 		9FB81ED0224582BE002BF3F1 /* SwiftyUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB81EBA22458280002BF3F1 /* SwiftyUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -399,7 +399,7 @@
 		9FB81E5822453A40002BF3F1 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9FB81EAD22456FBD002BF3F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9FB81EAF22456FD6002BF3F1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9FB81EB022458119002BF3F1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		9FB81EB022458119002BF3F1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		9FB81EB222458189002BF3F1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		9FB81EB42245827F002BF3F1 /* SwiftyUserDefaults.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyUserDefaults.xcodeproj; path = ../Frameworks/SwiftyUserDefaults/SwiftyUserDefaults.xcodeproj; sourceTree = "<group>"; };
 		9FB81ED322464813002BF3F1 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
@@ -580,8 +580,8 @@
 			isa = PBXGroup;
 			children = (
 				9F791A1C224043BB003DA51B /* App.swift */,
-				9FB81EB022458119002BF3F1 /* Configuration.swift */,
 				9F791A1E224043F0003DA51B /* Database.swift */,
+				9FB81EB022458119002BF3F1 /* Preferences.swift */,
 				9FB81ED522464924002BF3F1 /* Strings.swift */,
 				9F7602072242E32300DA7FC9 /* Texts.swift */,
 			);
@@ -1151,7 +1151,7 @@
 				9FB81EB322458189002BF3F1 /* UserDefaults.swift in Sources */,
 				9F791A25224046B8003DA51B /* NetworkService.swift in Sources */,
 				9F76F4462242620600EE2E2E /* QTableViewController.swift in Sources */,
-				9FB81EB12245811A002BF3F1 /* Configuration.swift in Sources */,
+				9FB81EB12245811A002BF3F1 /* Preferences.swift in Sources */,
 				9F791A2E22418948003DA51B /* TodoList.swift in Sources */,
 				9F7919FE2240411D003DA51B /* Todo.swift in Sources */,
 				9F8646182247A99E00712CDD /* Repository.swift in Sources */,
