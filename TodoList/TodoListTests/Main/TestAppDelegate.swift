@@ -8,8 +8,17 @@
 
 import UIKit
 
-class TestAppDelegate: NSObject {
+/// Minimum app delegate for faster testing
+class TestAppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
+        self.window?.rootViewController = UIViewController()
+        self.window?.makeKeyAndVisible()
+        return true
+    }
 
 }

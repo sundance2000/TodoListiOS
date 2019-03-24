@@ -11,6 +11,7 @@ import QLog
 import UIKit
 
 // Genius solution from http://qualitycoding.org/app-delegate-for-tests/
+// This call allows to exchange the app delegate for faster testing
 let appDelegateClass: AnyClass? = NSClassFromString("TodoListTests.TestAppDelegate") ?? AppDelegate.self
 _ = UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass!))
 

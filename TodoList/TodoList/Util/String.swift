@@ -35,9 +35,8 @@ public extension String {
             var temp = self
             temp.removeFirst(7)
             return URL(string: "https://" + temp)
-        } else {
-            return URL(string: "https://" + self)
         }
+        return URL(string: "https://" + self)
     }
 
     var localized: String {

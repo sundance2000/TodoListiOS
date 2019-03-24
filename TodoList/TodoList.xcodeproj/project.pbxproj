@@ -27,7 +27,6 @@
 		9F76F4592242629B00EE2E2E /* QColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F4582242629B00EE2E2E /* QColor.swift */; };
 		9F76F45B224262E500EE2E2E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F45A224262E500EE2E2E /* String.swift */; };
 		9F76F45E2242632C00EE2E2E /* QLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F45D2242632C00EE2E2E /* QLabel.swift */; };
-		9F76F4602242664000EE2E2E /* QButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F45F2242664000EE2E2E /* QButton.swift */; };
 		9F76F47322426D2900EE2E2E /* QSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76F47222426D2900EE2E2E /* QSwitch.swift */; };
 		9F7919FE2240411D003DA51B /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7919FD2240411D003DA51B /* Todo.swift */; };
 		9F791A172240425C003DA51B /* CoreStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F791A0A2240422D003DA51B /* CoreStore.framework */; };
@@ -322,7 +321,6 @@
 		9F76F4582242629B00EE2E2E /* QColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QColor.swift; sourceTree = "<group>"; };
 		9F76F45A224262E500EE2E2E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9F76F45D2242632C00EE2E2E /* QLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLabel.swift; sourceTree = "<group>"; };
-		9F76F45F2242664000EE2E2E /* QButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QButton.swift; sourceTree = "<group>"; };
 		9F76F47222426D2900EE2E2E /* QSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSwitch.swift; sourceTree = "<group>"; };
 		9F7919FD2240411D003DA51B /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		9F7919FF2240422D003DA51B /* CoreStore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreStore.xcodeproj; path = ../Frameworks/CoreStore/CoreStore.xcodeproj; sourceTree = "<group>"; };
@@ -492,7 +490,6 @@
 		9F76F45C2242630600EE2E2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9F76F45F2242664000EE2E2E /* QButton.swift */,
 				9F76F45D2242632C00EE2E2E /* QLabel.swift */,
 				9F76F47222426D2900EE2E2E /* QSwitch.swift */,
 			);
@@ -1045,7 +1042,6 @@
 				9F76F4462242620600EE2E2E /* QTableViewController.swift in Sources */,
 				9FB81EB12245811A002BF3F1 /* Configuration.swift in Sources */,
 				9F791A2E22418948003DA51B /* TodoList.swift in Sources */,
-				9F76F4602242664000EE2E2E /* QButton.swift in Sources */,
 				9F7919FE2240411D003DA51B /* Todo.swift in Sources */,
 				9F8646182247A99E00712CDD /* Repository.swift in Sources */,
 				9F7C37A32242879200A6CF66 /* Date.swift in Sources */,

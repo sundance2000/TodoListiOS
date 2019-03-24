@@ -11,6 +11,24 @@ import XCTest
 
 class DateTests: XCTestCase {
 
+    func testDayString() {
+        // 1. Arrange
+        let date = Date(timeIntervalSince1970: 1551443696)
+        let string = "1. 3. 2019"
+
+        // 3. Assert
+        XCTAssertEqual(date.dayString, string)
+    }
+
+    func testSimpleDateString() {
+        // 1. Arrange
+        let date = Date(timeIntervalSince1970: 1551443696)
+        let string = "Mar 1, 2019"
+
+        // 3. Assert
+        XCTAssertEqual(date.simpleDateString, string)
+    }
+
     func testRfc3339String() {
         // 1. Arrange
         let date = Date(timeIntervalSince1970: 1551443696)
