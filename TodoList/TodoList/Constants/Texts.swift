@@ -19,6 +19,10 @@ class Texts {
 
     // MARK: - View Controllers
 
+    class TodosTableViewController {
+        static let viewControllerTitle = "Todos".localized
+    }
+
     class TodoTableViewController {
         static let title = "Title".localized
         static let delete = "Delete".localized

@@ -73,10 +73,8 @@ class TodoRepository: Repository {
                 // Remove id from set
                 oldIds.remove(id)
             }
-        }, completion: { _ in
             // Delete todos with IDs not seen
-            self.delete(oldIds) { completion?() }
-        })
+        }, completion: { _ in self.delete(oldIds) { completion?() } })
     }
 
     func update(_ todo: Todo, with todoFull: TodoFull, completion: ((_ todo: Todo?) -> Void)? = nil) {

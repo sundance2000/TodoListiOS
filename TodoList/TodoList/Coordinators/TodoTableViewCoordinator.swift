@@ -63,7 +63,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         let todoBase = TodoBase(desc: desc, done: done, dueDate: dueDate, title: title)
         let todoFull = TodoFull(id: id, desc: desc, done: done, dueDate: dueDate, title: title)
         // Update to server
-        NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
+        NetworkService.shared.update(id: id, todoBase: todoBase) { _ in
             // Update database
             TodoRepository.shared.update(todo, with: todoFull)
         }
@@ -79,7 +79,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
             return
         }
         // Update to server
-        NetworkController.shared.delete(id: todo.id) { _ in
+        NetworkService.shared.delete(id: todo.id) { _ in
             // Update database
             TodoRepository.shared.delete(todo)
         }
@@ -94,7 +94,7 @@ extension TodoTableViewCoordinator: TodoTableViewControllerDelegate {
         let todoBase = TodoBase(desc: desc, done: done, dueDate: dueDate, title: title)
         self.todoTableViewController.dismiss(animated: true)
         // Update to server
-        NetworkController.shared.create(todoBase: todoBase) { _, todoFull in
+        NetworkService.shared.create(todoBase: todoBase) { _, todoFull in
             // Update database
             TodoRepository.shared.save(todoFull)
         }

@@ -43,21 +43,15 @@ class TodoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Localization
-        self.title = Texts.TodoTableViewController.viewControllerTitle
-        self.titleTextField.placeholder = Texts.TodoTableViewController.titleTextFieldPlaceholder
-        self.datePickerButtonDelete.setTitle("", for: .normal)
-        self.datePickerButtonToday.setTitle(Texts.TodoTableViewController.today, for: .normal)
-        self.datePickerButtonPlusOneDay.setTitle(Texts.TodoTableViewController.plusOneDay, for: .normal)
-        self.datePickerButtonPlusOneWeek.setTitle(Texts.TodoTableViewController.plusOneWeek, for: .normal)
-        self.datePickerButtonPlusOneMonth.setTitle(Texts.TodoTableViewController.plusOneMonth, for: .normal)
-        self.datePickerButtonPlusOneYear.setTitle(Texts.TodoTableViewController.plusOneYear, for: .normal)
-        self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
-        self.doneTitleLabel.text = Texts.TodoTableViewController.done
+        self.localize()
         // Set constraints for titleTextField
         self.titleTextField.smartInsertDeleteType = .no
         self.titleTextField.delegate = self
+        // Hide date picker
         self.hideDatePicker()
+        // Hide keyboard when tapping outside text field
         self.hideKeyboardWhenTappedAround()
+        // Load data
         self.loadData()
 
     }
@@ -84,7 +78,7 @@ class TodoTableViewController: UITableViewController {
         }
     }
 
-    func loadData() {
+    private func loadData() {
         // If a todo is already provided, load its data
         if let todo = self.todo {
             self.titleTextField.text = todo.title
@@ -96,6 +90,19 @@ class TodoTableViewController: UITableViewController {
             self.datePicker.date = Date()
             self.dueDateLabel.text = self.datePicker.date.simpleDateString
         }
+    }
+
+    private func localize() {
+        self.title = Texts.TodoTableViewController.viewControllerTitle
+        self.titleTextField.placeholder = Texts.TodoTableViewController.titleTextFieldPlaceholder
+        self.datePickerButtonDelete.setTitle("", for: .normal)
+        self.datePickerButtonToday.setTitle(Texts.TodoTableViewController.today, for: .normal)
+        self.datePickerButtonPlusOneDay.setTitle(Texts.TodoTableViewController.plusOneDay, for: .normal)
+        self.datePickerButtonPlusOneWeek.setTitle(Texts.TodoTableViewController.plusOneWeek, for: .normal)
+        self.datePickerButtonPlusOneMonth.setTitle(Texts.TodoTableViewController.plusOneMonth, for: .normal)
+        self.datePickerButtonPlusOneYear.setTitle(Texts.TodoTableViewController.plusOneYear, for: .normal)
+        self.descriptionTextField.placeholder = Texts.TodoTableViewController.descriptionTextFieldPlaceholder
+        self.doneTitleLabel.text = Texts.TodoTableViewController.done
     }
 
     func hideDatePicker() {

@@ -27,11 +27,12 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         // Localization
         self.title = Texts.SettingsTableViewController.viewControllerTitle
-        // Load data
-        self.serverAddressTextField?.text = self.serverAddress
         // Add bar buttons
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
+        // Hide keyboard when tapping outside text field
         self.hideKeyboardWhenTappedAround()
+        // Load data
+        self.serverAddressTextField?.text = self.serverAddress
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -52,8 +52,8 @@ extension SettingsTableViewCoordinator: SettingsTableViewControllerDelegate {
             return
         }
         Defaults[.serverAddress] = url.absoluteString
-        NetworkController.shared.shutdown()
-        NetworkController.shared.start()
+        NetworkService.shared.shutdown()
+        NetworkService.shared.start()
     }
 
 }

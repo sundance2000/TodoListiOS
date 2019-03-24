@@ -10,8 +10,8 @@ import Foundation
 
 struct Strings {
 
-    struct ControllerNames {
-        static let networkController                    = "Network                   Controller"
+    struct ServiceNames {
+        static let networkService                       = "Network                      Service"
     }
 
 }

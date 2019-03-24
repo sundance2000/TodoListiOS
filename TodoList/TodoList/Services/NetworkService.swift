@@ -1,5 +1,5 @@
 //
-//  NetworkController.swift
+//  NetworkService.swift
 //  TodoList
 //
 //  Created by Christian Oberdörfer on 18.03.19.
@@ -11,7 +11,7 @@ import Foundation
 import QLog
 import SwiftyUserDefaults
 
-class NetworkController: Service {
+class NetworkService: Service {
 
     private let jsonDecoder = JSONDecoder()
     private let jsonEncoder = JSONEncoder()
@@ -19,11 +19,11 @@ class NetworkController: Service {
     private var url = URL(string: "https://")!
 
     static var shared = {
-        return NetworkController()
+        return NetworkService()
     }()
 
     override var description: String {
-        return Strings.ControllerNames.networkController
+        return Strings.ServiceNames.networkService
     }
 
     private override init() {
@@ -49,12 +49,17 @@ class NetworkController: Service {
         }
     }
 
-    func create(todoBase: TodoBase, actionHandler: @escaping (_ statusCode: Int, _ todoFull: TodoFull) -> Void) {
-        var request = URLRequest(url: self.url)
-        request.httpMethod = HTTPMethod.post.rawValue
+    private func createJsonRequest(url: URL, httpMethod: HTTPMethod, todoBase: TodoBase) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod.rawValue
         request.setValue("application/json;", forHTTPHeaderField: "Accept")
         request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? self.jsonEncoder.encode(todoBase)
+        return request
+    }
+
+    func create(todoBase: TodoBase, actionHandler: @escaping (_ statusCode: Int, _ todoFull: TodoFull) -> Void) {
+        let request = self.createJsonRequest(url: self.url, httpMethod: .post, todoBase: todoBase)
         Alamofire.request(request).validate().responseJSON { response in
             guard let statusCode = response.response?.statusCode, let data = response.data else {
                 QLogError("Cannot get data from response \(response)")
@@ -74,10 +79,7 @@ class NetworkController: Service {
     }
 
     func delete(id: Int32, actionHandler: @escaping (_ statusCode: Int) -> Void) {
-        var request = URLRequest(url: self.url.appendingPathComponent(String(id)))
-        request.httpMethod = HTTPMethod.delete.rawValue
-        request.setValue("application/json;", forHTTPHeaderField: "Accept")
-        Alamofire.request(request).validate().responseJSON { response in
+        Alamofire.request(self.url.appendingPathComponent(String(id)), method: .delete, headers: ["Accept": "application/json"]).validate().responseJSON { response in
             guard let statusCode = response.response?.statusCode else {
                 QLogError("Cannot get data from response \(response)")
                 return
@@ -92,10 +94,7 @@ class NetworkController: Service {
     }
 
     func get(id: Int32, actionHandler: @escaping (_ statusCode: Int, _ todoFull: TodoFull) -> Void) {
-        var request = URLRequest(url: self.url.appendingPathComponent(String(id)))
-        request.httpMethod = HTTPMethod.get.rawValue
-        request.setValue("application/json;", forHTTPHeaderField: "Accept")
-        Alamofire.request(request).validate().responseJSON { response in
+        Alamofire.request(self.url.appendingPathComponent(String(id)), method: .get, headers: ["Accept": "application/json"]).validate().responseJSON { response in
             guard let statusCode = response.response?.statusCode, let data = response.data else {
                 QLogError("Cannot get data from response \(response)")
                 return
@@ -130,11 +129,7 @@ class NetworkController: Service {
     }
 
     func update(id: Int32, todoBase: TodoBase, actionHandler: @escaping (_ statusCode: Int) -> Void) {
-        var request = URLRequest(url: self.url.appendingPathComponent(String(id)))
-        request.httpMethod = HTTPMethod.put.rawValue
-        request.setValue("application/json;", forHTTPHeaderField: "Accept")
-        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try? self.jsonEncoder.encode(todoBase)
+        let request = self.createJsonRequest(url: self.url.appendingPathComponent(String(id)), httpMethod: .put, todoBase: todoBase)
         Alamofire.request(request).validate().responseJSON { response in
             guard let statusCode = response.response?.statusCode else {
                 QLogError("Cannot get data from response \(response)")

@@ -45,7 +45,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
 
     func delete(_ todo: Todo) {
         // Update to server
-        NetworkController.shared.delete(id: todo.id) { _ in
+        NetworkService.shared.delete(id: todo.id) { _ in
             // Update database
             TodoRepository.shared.delete(todo)
         }
@@ -53,7 +53,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
 
     func select(_ todo: Todo) {
         // Update from server
-        NetworkController.shared.get(id: todo.id) { _, todoFull in
+        NetworkService.shared.get(id: todo.id) { _, todoFull in
             // Update database
             TodoRepository.shared.update(todo, with: todoFull) { todo in
                 // Show todo
@@ -76,10 +76,10 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
         let done = !todo.done
         let id = todo.id
         // Update from server
-        NetworkController.shared.get(id: id) { _, todoFull in
+        NetworkService.shared.get(id: id) { _, todoFull in
             // Update to server
             let todoBase = TodoBase(desc: todoFull.desc, done: done, dueDate: todoFull.dueDate, title: todoFull.title)
-            NetworkController.shared.update(id: id, todoBase: todoBase) { _ in
+            NetworkService.shared.update(id: id, todoBase: todoBase) { _ in
                 // Update database
                 let todoFullNew = TodoFull(id: todoFull.id, desc: todoFull.desc, done: done, dueDate: todoFull.dueDate, title: todoFull.title)
                 TodoRepository.shared.update(todo, with: todoFullNew)

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         main()
         // Start coordinator
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        NetworkController.shared.start()
+        NetworkService.shared.start()
         self.appCoordinator = AppCoordinator(window: self.window!)
         self.appCoordinator.start()
         return true
