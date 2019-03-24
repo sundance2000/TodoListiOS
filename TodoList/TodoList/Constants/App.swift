@@ -10,7 +10,7 @@ import Foundation
 
 struct App {
 
-    static let bundleDomain = "de.oberdoerfer"
+    static let bundleDomain = "de.christian-oberdoerfer"
     static let displayName = "Todo List"
     static let identifier = App.bundleDomain + "." + App.name
     static let name = "TodoList"
