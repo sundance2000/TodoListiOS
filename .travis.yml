@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode10.1
-script: cd TodoList; xcodebuild clean; xcodebuild build test -project TodoList.xcodeproj -scheme TodoList -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1'
+script: cd TodoList; xcodebuild clean; cd ..; `pwd`/Frameworks/Cuckoo/run generate TodoList/TodoList/View\ Controllers/SettingsTableViewController.swift TodoList/TodoList/Coordinators/SettingsTableViewCoordinator.swift --testable TodoList --output TodoList/TodoListTests/GeneratedMocks.swift; cd TodoList; xcodebuild build test -project TodoList.xcodeproj -scheme TodoList -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1'
 after_success:
 - bash <(curl -s https://codecov.io/bash)
