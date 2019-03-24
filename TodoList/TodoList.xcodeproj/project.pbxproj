@@ -57,6 +57,7 @@
 		9F86469A2247E7BB00712CDD /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8646992247E7BB00712CDD /* Cuckoo.framework */; };
 		9F86469C2247EBF700712CDD /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86469B2247EBF600712CDD /* GeneratedMocks.swift */; };
 		9F86469F2247EC6500712CDD /* SettingsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F86469E2247EC6500712CDD /* SettingsTableViewControllerTests.swift */; };
+		9F8646A12248042800712CDD /* TodosTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8646A02248042800712CDD /* TodosTableViewControllerTests.swift */; };
 		9F93560F224037AA0092009A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93560E224037A90092009A /* AppCoordinator.swift */; };
 		9F935611224037D20092009A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935610224037D20092009A /* Coordinator.swift */; };
 		9F935613224037F40092009A /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935612224037F40092009A /* RootViewCoordinator.swift */; };
@@ -389,6 +390,7 @@
 		9F8646992247E7BB00712CDD /* Cuckoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cuckoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F86469B2247EBF600712CDD /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9F86469E2247EC6500712CDD /* SettingsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewControllerTests.swift; sourceTree = "<group>"; };
+		9F8646A02248042800712CDD /* TodosTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9F93560E224037A90092009A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9F935610224037D20092009A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F935612224037F40092009A /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				9F86469E2247EC6500712CDD /* SettingsTableViewControllerTests.swift */,
+				9F8646A02248042800712CDD /* TodosTableViewControllerTests.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1111,6 +1114,7 @@
 			inputPaths = (
 				"$(SRCROOT)/TodoList/Coordinators/SettingsTableViewCoordinator.swift",
 				"$(SRCROOT)/TodoList/View Controllers/SettingsTableViewController.swift",
+				"$(SRCROOT)/TodoList/View Controllers/TodosTableViewController.swift",
 			);
 			outputFileListPaths = (
 			);
@@ -1193,6 +1197,7 @@
 				9F86469C2247EBF700712CDD /* GeneratedMocks.swift in Sources */,
 				9F8646672247E19F00712CDD /* AppCoordinatorTests.swift in Sources */,
 				9F791A3022418965003DA51B /* TodoBaseTests.swift in Sources */,
+				9F8646A12248042800712CDD /* TodosTableViewControllerTests.swift in Sources */,
 				9F2A95F8224033FE00E6F74F /* TestAppDelegate.swift in Sources */,
 				9F86469F2247EC6500712CDD /* SettingsTableViewControllerTests.swift in Sources */,
 				9F8646652247C20900712CDD /* TodoRepositoryTests.swift in Sources */,
