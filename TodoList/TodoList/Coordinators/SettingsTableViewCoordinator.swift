@@ -35,9 +35,9 @@ class SettingsTableViewCoordinator: Coordinator {
      */
     func start() {
         self.settingsTableViewController.serverAddress = Defaults[.serverAddress]
-        let navigationContoller = UINavigationController(rootViewController: self.settingsTableViewController)
-        navigationContoller.setToolbarHidden(false, animated: true)
-        self.navigationController.present(navigationContoller, animated: true)
+        let navigationController = UINavigationController(rootViewController: self.settingsTableViewController)
+        navigationController.setToolbarHidden(false, animated: true)
+        self.navigationController.present(navigationController, animated: true)
     }
 
 }

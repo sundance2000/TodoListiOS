@@ -22,7 +22,7 @@ public extension Date {
         return formatter
     }()
 
-    static fileprivate var simpledateFormatter: DateFormatter = {
+    static fileprivate var simpleDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .none
         formatter.dateStyle = .medium
@@ -38,7 +38,7 @@ public extension Date {
     }
 
     public var simpleDateString: String {
-        return Date.simpledateFormatter.string(from: self)
+        return Date.simpleDateFormatter.string(from: self)
     }
 
 }

@@ -34,7 +34,7 @@ private func setAppearance() {
 /**
  Configures the logger
  */
-private func setQlog() {
+private func setQLog() {
     QLog.Images.archive = GameIcon.openfolder.tabBarImage
     QLog.Images.live = GameIcon.histogram.tabBarImage
     QLog.Images.supportPackage = GameIcon.cardboardbox.tabBarImage
@@ -54,5 +54,5 @@ private func setQlog() {
  */
 func main() {
     setAppearance()
-    setQlog()
+    setQLog()
 }

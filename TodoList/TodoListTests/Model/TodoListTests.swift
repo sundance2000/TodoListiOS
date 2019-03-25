@@ -9,7 +9,7 @@
 @testable import TodoList
 import XCTest
 
-class TodoListests: XCTestCase {
+class TodoLisTests: XCTestCase {
 
     func testJsonEncode() {
         // 1. Arrange

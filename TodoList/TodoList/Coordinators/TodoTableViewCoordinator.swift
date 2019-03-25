@@ -40,8 +40,8 @@ class TodoTableViewCoordinator: Coordinator {
     func start() {
         // If no todo is set, show view controller modally to create a new todo
         if self.todo == nil {
-            let navigationContoller = UINavigationController(rootViewController: self.todoTableViewController)
-            self.navigationController.present(navigationContoller, animated: true)
+            let navigationController = UINavigationController(rootViewController: self.todoTableViewController)
+            self.navigationController.present(navigationController, animated: true)
         } else {
             // Else push the view controller to show an existing todo
             self.navigationController.setToolbarHidden(false, animated: true)

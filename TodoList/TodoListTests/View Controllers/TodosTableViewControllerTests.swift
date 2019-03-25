@@ -111,7 +111,7 @@ class TodosTableViewControllerTests: XCTestCase {
         XCTAssertEqual(todosTableViewController.tableView(todosTableViewController.tableView, titleForHeaderInSection: 0), Texts.today)
     }
 
-    func testTitleForHeaderInSectionTomorow() {
+    func testTitleForHeaderInSectionTomorrow() {
         // 1. Arrange
         let date = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
         self.create(id: 1, dueDate: date)

@@ -20,7 +20,7 @@ class TodoTableViewTests: XCTestCase {
     private var descriptionTextField: XCUIElement!
     private var doneSwitch: XCUIElement!
 
-    static private var simpledateFormatter: DateFormatter = {
+    static private var simpleDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .none
         formatter.dateStyle = .medium
@@ -35,7 +35,7 @@ class TodoTableViewTests: XCTestCase {
         self.cancelButton = self.app.navigationBars["Todo"].buttons["Cancel"]
         self.saveButton = self.app.navigationBars["Todo"].buttons["Save"]
         self.titleTextField = self.app.tables.textFields.element(boundBy: 0)
-        self.dueDateLabel = self.app.staticTexts[TodoTableViewTests.simpledateFormatter.string(from: Date())]
+        self.dueDateLabel = self.app.staticTexts[TodoTableViewTests.simpleDateFormatter.string(from: Date())]
         self.descriptionTextField = self.app.tables.textFields.element(boundBy: 1)
         self.doneSwitch = self.app.switches.firstMatch
 

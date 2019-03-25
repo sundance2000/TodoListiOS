@@ -184,7 +184,7 @@ class TodoRepositoryTests: XCTestCase {
         XCTAssertEqual(todo2?.title, "test2")
     }
 
-    func testSaveTodoListOverwite() {
+    func testSaveTodoListOverwrite() {
         // 1. Arrange
         self.create(1)
         self.create(2)

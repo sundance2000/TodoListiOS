@@ -46,7 +46,7 @@ import UIKit
             return buttonState
         }
         set (value) {
-            // Set foreground image accordings to new button state
+            // Set foreground image according to new button state
             self.buttonState = value
             if self.buttonState {
                 self.foregroundImageView.image = self.foregroundImageOn
