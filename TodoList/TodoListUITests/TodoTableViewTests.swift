@@ -175,6 +175,7 @@ class TodoTableViewTests: XCTestCase {
 
         // 2. Action
         self.app.tables.cells.firstMatch.tap()
+        self.descriptionTextField.tap()
         self.titleTextField.tap()
         self.titleTextField.typeText("B")
         self.descriptionTextField.tap()
@@ -254,6 +255,7 @@ class TodoTableViewTests: XCTestCase {
 
         // 2. Action
         self.app.tables.cells.firstMatch.tap()
+        self.descriptionTextField.tap()
         self.titleTextField.tap()
         self.titleTextField.typeText("234567890123456789012345678901")
         self.descriptionTextField.tap()
