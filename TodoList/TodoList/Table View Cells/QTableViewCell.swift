@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Custom table view cell to change basic layout
+ */
 open class QTableViewCell: UITableViewCell {
 
     override open var frame: CGRect {

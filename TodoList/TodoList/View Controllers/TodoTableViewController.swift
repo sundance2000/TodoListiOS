@@ -11,9 +11,24 @@ import UIKit
 
 protocol TodoTableViewControllerDelegate: class {
 
+    /**
+     Moves back to the previous view
+     */
     func back()
+
+    /**
+     Cancels the modal view
+     */
     func cancel()
+
+    /**
+     Deletes the todo
+     */
     func delete()
+
+    /**
+     Saves the todo
+     */
     func save()
 
 }
@@ -78,6 +93,9 @@ class TodoTableViewController: UITableViewController {
         }
     }
 
+    /**
+     Loads the data from the todo object or sets defaults
+     */
     private func loadData() {
         // If a todo is already provided, load its data
         if let todo = self.todo {
@@ -87,11 +105,15 @@ class TodoTableViewController: UITableViewController {
             self.descriptionTextField.text = todo.desc
             self.doneSwitch.isOn = todo.done
         } else {
+            // Else set defaults
             self.datePicker.date = Date()
             self.dueDateLabel.text = self.datePicker.date.simpleDateString
         }
     }
 
+    /**
+     Localizes all UI elements
+     */
     private func localize() {
         self.title = Texts.TodoTableViewController.viewControllerTitle
         self.titleTextField.placeholder = Texts.TodoTableViewController.titleTextFieldPlaceholder
@@ -105,7 +127,10 @@ class TodoTableViewController: UITableViewController {
         self.doneTitleLabel.text = Texts.TodoTableViewController.done
     }
 
-    func hideDatePicker() {
+    /**
+     Hides the date picker
+     */
+    private func hideDatePicker() {
         self.datePicker.isHidden = true
         self.datePickerButtonDelete.isHidden = true
         self.datePickerButtonToday.isHidden = true
@@ -162,14 +187,23 @@ class TodoTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
+    /**
+     Function to forward canceling to the delegate
+     */
     @objc func cancel() {
         self.delegate?.cancel()
     }
 
+    /**
+     Function to forward saving to the delegate
+     */
     @objc func save() {
         self.delegate?.save()
     }
 
+    /**
+     Function to forward deleting to the delegate
+     */
     @objc func deleteTodo() {
         self.delegate?.delete()
     }
@@ -219,6 +253,8 @@ class TodoTableViewController: UITableViewController {
 
 // MARK: - UITextFieldDelegate
 
+// Extension to restrict the allowed number of characters in the title text field
+// Taken from https://stackoverflow.com/a/25224331/5804550
 extension TodoTableViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

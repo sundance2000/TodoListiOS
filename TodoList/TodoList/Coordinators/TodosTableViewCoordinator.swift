@@ -12,12 +12,12 @@ import UIKit
  Coordinates handling of todos table
  */
 class TodosTableViewCoordinator: Coordinator {
-    
+
     private let navigationController: UINavigationController
     private let todosTableViewController: TodosTableViewController
     private var settingsTableViewCoordinator: SettingsTableViewCoordinator?
     private var todoTableViewCoordinator: TodoTableViewCoordinator?
-    
+
     /**
      Creates a new todos table coordinator
      - parameter navigationController: The navigation controller to use
@@ -28,26 +28,26 @@ class TodosTableViewCoordinator: Coordinator {
         super.init()
         self.todosTableViewController.delegate = self
     }
-    
+
     /**
      Pushes the view controller onto the stack
      */
     func start() {
         self.navigationController.pushViewController(self.todosTableViewController, animated: true)
     }
-    
+
 }
 
 // MARK: - TodosTableViewControllerDelegate
 
 extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
-    
+
     func add() {
         // Create a new todo table view coordinator and start it
         self.todoTableViewCoordinator = TodoTableViewCoordinator(navigationController: self.navigationController, todo: nil)
         self.todoTableViewCoordinator?.start()
     }
-    
+
     func delete(_ todo: Todo) {
         // Update to server
         NetworkService.shared.delete(id: todo.id) { _ in
@@ -55,7 +55,7 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
             TodoRepository.shared.delete(todo)
         }
     }
-    
+
     func select(_ todo: Todo) {
         // Update from server
         NetworkService.shared.get(id: todo.id) { _, todoFull in
@@ -70,13 +70,13 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
             }
         }
     }
-    
+
     func showSettings() {
         // Create a new settings table view coordinator and start it
         self.settingsTableViewCoordinator = SettingsTableViewCoordinator(navigationController: self.navigationController)
         self.settingsTableViewCoordinator?.start()
     }
-    
+
     func toggle(_ todo: Todo) {
         let done = !todo.done
         let id = todo.id
@@ -91,5 +91,5 @@ extension TodosTableViewCoordinator: TodosTableViewControllerDelegate {
             }
         }
     }
-    
+
 }

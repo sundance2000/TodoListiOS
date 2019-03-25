@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Custom label with colored background and round corners
+ */
 @IBDesignable public class QLabel: UILabel {
 
     @IBInspectable public var fontSize: CGFloat {
@@ -21,9 +24,11 @@ import UIKit
 
     @IBInspectable public var colorName: String {
         get {
+            // Return the QColor as String
             return String(describing: self.qColor)
         }
         set {
+            // Cast the given String to QColor
             guard let qColor = QColor(rawValue: newValue) else {
                 return
             }
@@ -67,6 +72,9 @@ import UIKit
         self.set()
     }
 
+    /**
+     Sets the style of the label
+     */
     func set() {
         //self.backgroundColor = self.qColor.color
         // Set corners rounded

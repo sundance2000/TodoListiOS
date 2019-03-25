@@ -10,7 +10,14 @@ import UIKit
 
 protocol SettingsTableViewControllerDelegate: class {
 
+    /**
+     Generates a support package
+     */
     func generateSupportPackage()
+
+    /**
+     Saves the current settings
+     */
     func save()
 
 }
@@ -63,10 +70,16 @@ class SettingsTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
+    /**
+     Function to forward support package generation to the delegate
+     */
     @objc func generateSupportPackage() {
         self.delegate?.generateSupportPackage()
     }
 
+    /**
+     Function to forward saving to the delegate
+     */
     @objc func save() {
         self.delegate?.save()
     }

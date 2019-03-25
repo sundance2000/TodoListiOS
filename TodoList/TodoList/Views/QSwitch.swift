@@ -9,13 +9,18 @@
 import GameIcons
 import UIKit
 
+/**
+ Custom switch with filled circle for state "on" and empty circle for state "off"
+ */
 @IBDesignable public class QSwitch: UIButton {
 
     @IBInspectable var color: String {
         get {
+            // Return the QColor as String
             return String(describing: self.qColor)
         }
         set {
+            // Cast the given String to QColor and update background color and foreground image
             guard let qColor = QColor(rawValue: newValue) else {
                 return
             }
@@ -33,11 +38,15 @@ import UIKit
     private var buttonState = false
     private var qColor: QColor = .lightGreen
 
+    /**
+     Button state
+     */
     public var on: Bool {
         get {
             return buttonState
         }
         set (value) {
+            // Set foreground image accordings to new button state
             self.buttonState = value
             if self.buttonState {
                 self.foregroundImageView.image = self.foregroundImageOn
@@ -71,6 +80,9 @@ import UIKit
         self.setForegroundImageView()
     }
 
+    /**
+     Sets foreground image
+     */
     func setForegroundImageView() {
         foregroundImageView.tintColor = self.qColor.color
         foregroundImageView.frame = CGRect(x: self.bounds.minX + 15, y: self.bounds.minY + 15, width: self.bounds.width - 30, height: self.bounds.height - 30)

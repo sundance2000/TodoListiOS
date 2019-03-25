@@ -8,6 +8,7 @@
 
 import SwiftyUserDefaults
 
+// Configures preferences of UserDefaults
 extension DefaultsKeys {
 
     static let serverAddress = DefaultsKey<String>(Preferences.serverAddress, defaultValue: Preferences.serverAddressDefaultValue)

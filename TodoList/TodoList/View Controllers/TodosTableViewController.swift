@@ -12,11 +12,32 @@ import UIKit
 
 protocol TodosTableViewControllerDelegate: class {
 
-    /// add
+    /**
+     Creates a new todo
+     */
     func add()
+
+    /**
+     Deletes a todo
+     - parameter todo: The todo to delete
+     */
     func delete(_ todo: Todo)
+
+    /**
+     Selects a todo
+     - parameter todo: The todo to select
+     */
     func select(_ todo: Todo)
+
+    /**
+     Shows the settings
+     */
     func showSettings()
+
+    /**
+     Toggles the done state of a todo
+     - parameter todo: The todo to toggle
+     */
     func toggle(_ todo: Todo)
 
 }
@@ -110,10 +131,16 @@ class TodosTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
+    /**
+     Function to forward adding to the delegate
+     */
     @objc func add() {
         self.delegate?.add()
     }
 
+    /**
+     Function to forward settings showing to the delegate
+     */
     @objc func showSettings() {
         self.delegate?.showSettings()
     }

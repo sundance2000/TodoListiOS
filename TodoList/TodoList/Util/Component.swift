@@ -9,21 +9,25 @@
 import Foundation
 import QLog
 
+/**
+ The component protocol
+ */
 protocol ComponentProtocol: class {
 
     var shuttingDown: Bool { get set }
     var started: Bool { get set }
 
     /**
-     Starts the controller and executes the action handler.
+     Starts the component and executes the action handler
+     If the component is already started, the start is not performed.
      - parameter handler: The action handler
      - parameter silently: Set true to suppress INFO log output about start
      */
     func start(silently: Bool, _ handler: @escaping (() -> Void))
 
     /**
-     Shuts the controller down and executes an action handler.
-     If the controller is already shutting down, the shutdown is not performed.
+     Shuts the component down and executes an action handler.
+     If the component is already shutting down, the shutdown is not performed.
      - parameter handler: The action handler
      - parameter silently: Set true to suppress INFO log output about shutdown
      */
@@ -31,7 +35,9 @@ protocol ComponentProtocol: class {
 
 }
 
-/// Plain Component
+/**
+ The component class
+ */
 class Component: ComponentProtocol, CustomStringConvertible {
 
     var shuttingDown: Bool = false

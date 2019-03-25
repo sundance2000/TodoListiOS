@@ -8,8 +8,14 @@
 
 import UIKit
 
+/**
+ Custom table view controller to change basic layout
+ */
 public protocol QTableViewController: class {
 
+    /**
+     Sets the custom theme for the table view controller
+     */
     func setTheme()
 
 }
@@ -26,9 +32,10 @@ extension UITableViewController: QTableViewController {
 
 }
 
+// Extension to hide the the keyboard when tapping outside a text field
+// Taken from https://stackoverflow.com/a/27079103/5804550
 extension UIViewController {
 
-    // Taken from https://stackoverflow.com/a/27079103/5804550
     public func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false

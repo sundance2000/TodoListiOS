@@ -10,7 +10,7 @@
  Stores localized texts
  */
 class Texts {
-    
+
     static let archive = "Archive".localized
     static let cancel = "Cancel".localized
     static let live = "Live".localized

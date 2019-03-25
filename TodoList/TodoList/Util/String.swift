@@ -28,6 +28,11 @@ public extension String {
         return formatter
     }()
 
+    /**
+     Casts the String to a HTTPS URL, if possible.
+     If the string does not start with "https://", "https://" is added.
+     If the string starts with "http://", "http://" is replaced by "https://".
+     */
     var httpsUrl: URL? {
         if self.lowercased().hasPrefix("https://") {
             return URL(string: self)
@@ -39,6 +44,9 @@ public extension String {
         return URL(string: "https://" + self)
     }
 
+    /**
+     Returns the String as localized string
+     */
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-/// The repository protocol
-protocol RepositoryProtocol: class {
-
-}
+/**
+ The repository protocol
+ */
+protocol RepositoryProtocol: class {}
 
 typealias Repository = Component & RepositoryProtocol

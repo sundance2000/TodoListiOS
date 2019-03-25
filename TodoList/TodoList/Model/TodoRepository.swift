@@ -10,6 +10,9 @@ import CoreStore
 import Foundation
 import QLog
 
+/**
+ The repository to manage todos
+ */
 class TodoRepository: Repository {
 
     static var shared = {
@@ -19,6 +22,11 @@ class TodoRepository: Repository {
     private override init() {
     }
 
+    /**
+     Deletes a todo from the database
+     - parameter todo: The todo to delete
+     - parameter completion: The completion handler to be called when the transaction is completed
+     */
     func delete(_ todo: Todo, completion: (() -> Void)? = nil) {
         Database.dataStack.perform(asynchronous: { transaction in
             guard let todo = transaction.edit(todo) else {
@@ -28,6 +36,11 @@ class TodoRepository: Repository {
         }, completion: { _ in completion?() })
     }
 
+    /**
+     Deletes multiple todos from the database
+     - parameter ids: A set of todo IDs to delete
+     - parameter completion: The completion handler to be called when the transaction is completed
+     */
     func delete(_ ids: Set<Int32>, completion: (() -> Void)? = nil) {
         Database.dataStack.perform(asynchronous: { transaction in
             for id in ids {
@@ -38,6 +51,11 @@ class TodoRepository: Repository {
         }, completion: { _ in completion?() })
     }
 
+    /**
+     Saves a todo to the database
+     - parameter todoFull: The TodoFull object containing the data of the todo
+     - parameter completion: The completion handler to be called when the transaction is completed
+     */
     func save(_ todoFull: TodoFull, completion: (() -> Void)? = nil) {
         Database.dataStack.perform(asynchronous: { transaction in
             guard let id = todoFull.id, let done = todoFull.done, let dueDate = todoFull.dueDate?.rfc3339date, let title = todoFull.title else {
@@ -54,6 +72,11 @@ class TodoRepository: Repository {
         }, completion: { _ in completion?() })
     }
 
+    /**
+     Saves a multiple todos to the database
+     - parameter todoListList: An array of TodoList objects containing the data of the todos
+     - parameter completion: The completion handler to be called when the transaction is completed
+     */
     func save(_ todoListList: [TodoList], completion: (() -> Void)? = nil) {
         var oldIds = Set<Int32>()
         Database.dataStack.perform(asynchronous: { transaction in
@@ -77,6 +100,13 @@ class TodoRepository: Repository {
         }, completion: { _ in self.delete(oldIds) { completion?() } })
     }
 
+    /**
+     Updates a todo and returns the updated todo via completion handler
+     - parameter todo: The todo to update
+     - parameter todoFull: The TodoFull object containing the data of the todo
+     - parameter completion: The completion handler to be called when the transaction is completed
+     - parameter todo: The updated todo
+     */
     func update(_ todo: Todo, with todoFull: TodoFull, completion: ((_ todo: Todo?) -> Void)? = nil) {
         let id = todo.id
         Database.dataStack.perform(asynchronous: { transaction in

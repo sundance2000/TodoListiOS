@@ -10,6 +10,10 @@ import UIKit
 
 protocol TodoTableViewCellDelegate: class {
 
+    /**
+     Toggles the done state of a todo
+     - parameter todo: The todo to toggle
+     */
     func toggle(_ todo: Todo)
 
 }
@@ -23,6 +27,10 @@ class TodoTableViewCell: QTableViewCell {
 
     var todo: Todo!
 
+    /**
+     Sets the UI elements of the table view cell
+     - parameter todo: The todo object of the cell
+     */
     func set(_ todo: Todo) {
         self.todo = todo
         self.doneSwitch.on = todo.done
@@ -31,6 +39,10 @@ class TodoTableViewCell: QTableViewCell {
 
     // MARK: - Navigation
 
+    /**
+     Updates the UI and forwards toggling to the delegate
+     - parameter sender: The sender of the action
+     */
     @IBAction func toggleDoneSwitch(_ sender: AnyObject) {
         // Update UI
         self.doneSwitch.on = !self.doneSwitch.on

@@ -14,7 +14,7 @@ import Foundation
 protocol CoordinatorProtocol: class {
 
     /**
-     Starts the coordinator and pushes the corresponding view controller
+     Starts the coordinator and pushes or presents the corresponding view controller
      */
     func start()
 
